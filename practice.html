@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b30">
+  <meta name="description" content="Разберитесь, как применять ИИ в разработке 1С. Измените условия заказа, выберите среду команды и проследите путь задачи до выпуска.">
+  <title>Как применять ИИ в разработке 1С</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="map.css">
+  <script defer src="learning-path.js"></script>
+  <script defer src="order-example.js"></script>
+</head>
+<body class="map-page">
+  <a class="skip-link" href="#guide-steps">К шагам разбора</a>
+  <header class="site-header">
+    <a class="brand" href="index.html#map"><span class="brand-mark" aria-hidden="true">1С</span><span>Карта исследования</span></a>
+    <span class="edition">Россия, 27 ноября 2026</span>
+  </header>
+  <main id="map" class="reader learning-guide">
+    <span id="main" class="legacy-anchor"></span><span id="home" class="legacy-anchor"></span>
+    <div class="guide-intro">
+      <h1 id="page-title">Как применять ИИ в разработке 1С</h1>
+      <p>Разберите один заказ: от вопроса к ИИ до проверки перед выпуском.</p>
+    </div>
+    <nav class="guide-steps" id="guide-steps" aria-label="Шаги разбора">
+      <a href="#experience"><span class="step-num">1</span><span class="step-name">Пример</span></a>
+      <a href="#choice"><span class="step-num">2</span><span class="step-name">Выбор инструмента</span></a>
+      <a href="#workflow"><span class="step-num">3</span><span class="step-name">Структура проекта</span></a>
+    </nav>
+
+    <section class="guide-panel" data-step id="experience" aria-labelledby="order-demo-title">
+      <span id="experience-title" class="legacy-anchor"></span><span id="cases" class="legacy-anchor"></span><span id="cases-title" class="legacy-anchor"></span>
+      <div class="order-demo" aria-labelledby="order-demo-title">
+  <h2 id="order-demo-title">Заказ без адреса. Что сделает 1С?</h2>
+  <p class="demo-lead">Учебный пример заказа покупателя.<span data-demo-instruction hidden> Измените адрес или действие менеджера и посмотрите, какой тест стоит попросить у ИИ.</span></p>
+
+  <div class="demo-controls" hidden>
+    <fieldset class="demo-field">
+      <legend>Адрес доставки</legend>
+      <label><input type="radio" name="lesson-address" value="empty" checked> Пустой</label>
+      <label><input type="radio" name="lesson-address" value="filled"> Заполнен</label>
+    </fieldset>
+
+    <fieldset class="demo-field">
+      <legend>Действие менеджера</legend>
+      <label><input type="radio" name="lesson-action" value="post" checked> Провести заказ</label>
+      <label><input type="radio" name="lesson-action" value="draft"> Записать черновик</label>
+    </fieldset>
+
+    <div class="demo-result" aria-live="polite">
+      <p class="demo-result-label">Что произойдет</p>
+      <p class="demo-result-text" data-demo-result tabindex="-1">Заказ без адреса. Перед проведением появится предупреждение.</p>
+      <p class="demo-check"><strong>Какой тест попросить у ИИ</strong><br><span data-demo-check>Без адреса показать предупреждение до проведения, затем разрешить его после подтверждения.</span></p>
+      <button class="demo-confirm" type="button" data-demo-confirm hidden>Подтвердить проведение</button>
+    </div>
+  </div>
+
+  <div class="demo-fallback">
+    <p>С адресом заказ проводится без предупреждения. Если адрес пуст, менеджер видит предупреждение и подтверждает проведение. Черновик без адреса сохраняется без предупреждения. Попросите ИИ составить тест для каждого из этих случаев.</p>
+  </div>
+
+  <details class="demo-disclosure" data-demo-disclosure>
+    <summary>Как здесь помогает ИИ?</summary>
+    <div class="demo-disclosure-body">
+      <p><strong>Заказчик выбирает правило.</strong> При пустом адресе достаточно предупредить менеджера. Аналитик записывает, что заказ можно провести после подтверждения.</p>
+      <p><strong>Как заметить ошибку ИИ?</strong> Допустим, помощник предложил заблокировать заказ. Выберите пустой адрес и подтвердите проведение. Если заказ останется непроведенным, предложенное изменение нарушает правило.</p>
+      <p><strong>Разработчик</strong> поручает ИИ предложить изменение кода и тесты, проверяет, где вызывается предупреждение, и запускает тесты на копии базы. Коллега проверяет изменения в коде. На тестовой базе сверяют права пользователей и записи в регистрах до и после доработки.</p>
+    </div>
+  </details>
+
+  <nav class="demo-followups" aria-label="Примеры из опыта 1С">
+    <a href="docs/evidence.html#разработка-с-агентами-dns">Открыть опубликованный кейс DNS</a>
+    <a href="docs/business-cases.html">Посмотреть применение ИИ в бизнес-процессах</a>
+  </nav>
+</div>
+      <nav class="step-actions" aria-label="Дальше по разбору"><a class="next-step" href="#choice">Далее: выбрать инструмент <span aria-hidden="true">→</span></a></nav>
+    </section>
+    <section class="guide-panel" data-step id="choice" aria-labelledby="choice-title">
+      <span id="recommendation" class="legacy-anchor"></span><span id="recommendation-title" class="legacy-anchor"></span>
+      <h2 id="choice-title">В каких условиях работает команда?</h2>
+<p>На примере заказа без адреса сравните четыре ситуации. Сначала определите, какие данные можно передавать.</p>
+
+<div class="choice-list">
+  <details class="choice-card" name="team-situation" open>
+    <summary>Конфигуратор и разрешенный помощник</summary>
+    <div class="choice-detail">
+      <p>Передайте обезличенную заявку и попросите предложить вопросы заказчику и сценарии приемки. Не передавайте код, пока владелец данных этого не разрешил.</p>
+      <p>Заказчик подтверждает правило предупреждения. Разработчик сам находит обработчик, сверяет имена объектов и проверяет код на своей конфигурации.</p>
+    </div>
+  </details>
+
+  <details class="choice-card" name="team-situation">
+    <summary>EDT и 1С:Напарник</summary>
+    <div class="choice-detail">
+      <p>В среде разработки 1С:EDT помощник видит контекст проекта. Покажите Напарнику модуль заказа и попросите объяснить код или подготовить тест. Запросы идут на серверы 1С через интернет. <a href="https://code.1c.ai/support/">Справка 1С</a></p>
+      <p>Сверьте с владельцем данных, что разрешено отправлять, и проверьте совместимость EDT. По заявлению 1С, данные не передаются сторонним сервисам и не используются для обучения без согласия. Разработчик проверяет изменение на целевой конфигурации.</p>
+    </div>
+  </details>
+
+  <details class="choice-card" name="team-situation">
+    <summary>Код нельзя передавать</summary>
+    <div class="choice-detail">
+      <p>Используйте вымышленную заявку, чтобы получить варианты вопросов и приемки. Исходники, метаданные и журналы оставьте внутри организации.</p>
+      <p>Для закрытого кода изучите внутренний помощник, если есть согласованная модель, инфраструктура и ответственный. Возможности проверьте на своей версии 1С.</p>
+    </div>
+  </details>
+
+  <details class="choice-card" name="team-situation">
+    <summary>Польза пока неясна</summary>
+    <div class="choice-detail">
+      <p>Сохраните текущий способ как основу для сравнения. По похожим задачам запишите время уточнений, разработки, ревью и исправлений.</p>
+      <p>Затем оцените одно действие помощника, например поиск пропущенных условий. Считайте время на подготовку и проверку. Не применять ИИ тоже может быть подходящим решением.</p>
+    </div>
+  </details>
+</div>
+
+<nav class="resource-links" aria-label="Материалы для сравнения">
+  <a href="docs/decision.html">Сравнение подходов</a>
+  <a href="docs/tools.html">Инструменты и навыки</a>
+</nav>
+      <nav class="step-actions" aria-label="Переход между шагами"><a class="prev-step" href="#experience">Назад к примеру</a><a class="next-step" href="#workflow">Далее: разобрать проект <span aria-hidden="true">→</span></a></nav>
+    </section>
+    <section class="guide-panel" data-step id="workflow" aria-labelledby="workflow-title">
+      <span id="process" class="legacy-anchor"></span><span id="process-title" class="legacy-anchor"></span><span id="example" class="legacy-anchor"></span><span id="example-title" class="legacy-anchor"></span>
+      <h2 id="workflow-title">Как идет задача от запроса до выпуска?</h2>
+<p>Откройте этап, чтобы узнать, кто берет задачу, что готовит с помощью ИИ и кому передает результат.</p>
+
+<div class="project-steps">
+  <details class="project-card" name="project-stage" open>
+    <summary>1. Согласовать поведение</summary>
+    <div class="project-detail">
+      <p><strong>Заказчик и аналитик</strong> уточняют, что считается пустым адресом и нужно ли проводить заказ после предупреждения. ИИ может предложить вопросы.</p>
+      <p><strong>Документ:</strong> карточка задачи с пятью примерами ожидаемого поведения. Заказчик ее принимает. Аналитик передает правила разработчику. <a href="templates/task.html">Шаблон карточки</a></p>
+    </div>
+  </details>
+
+  <details class="project-card" name="project-stage">
+    <summary>2. Подготовить изменение</summary>
+    <div class="project-detail">
+      <p><strong>Разработчик</strong> находит обработчик и сохраняет исходную версию в хранилище. ИИ предлагает ограниченное изменение и заготовку теста.</p>
+      <p><strong>Результат:</strong> версия изменения и список отличий от исходного кода. Разработчик сверяет объект, права и побочные эффекты, затем передает версию на ревью.</p>
+    </div>
+  </details>
+
+  <details class="project-card" name="project-stage">
+    <summary>3. Сделать ревью и тесты</summary>
+    <div class="project-detail">
+      <p><strong>Ревьюер и тестировщик</strong> сверяют изменение с заявкой и запускают пять сценариев на тестовой базе. Черновик сохраняется без предупреждения, проведение заказа с пустым адресом показывает предупреждение, но не блокируется.</p>
+      <p><strong>Документ:</strong> замечания и отчет проверок, включая права роли и неизменность движений. Ревьюер закрывает замечания, тестировщик передает результат выпускающему. Провал обязательного теста останавливает выпуск. <a href="docs/pilot.html">Пять сценариев проверки</a></p>
+    </div>
+  </details>
+
+  <details class="project-card" name="project-stage">
+    <summary>4. Выпустить и проверить результат</summary>
+    <div class="project-detail">
+      <p><strong>Заказчик</strong> принимает результат, выпускающий сверяет проверенную версию, проверки и способ возврата. После установки команда наблюдает за ключевым сценарием и ошибками.</p>
+      <p><strong>Документ:</strong> запись выпуска и последующих обращений. При проблеме выпускающий останавливает распространение и согласует возврат с владельцем базы. <a href="docs/measurement.html">Метрики задач и выпусков</a></p>
+    </div>
+  </details>
+</div>
+
+<details class="project-record">
+  <summary>Что хранить вместе с задачей</summary>
+  <p>На карточке доработки о предупреждении при пустом адресе удобно собрать четыре связанные записи. В трекере, хранилище 1С или Git у них могут быть разные адреса.</p>
+  <ul>
+    <li><strong>Требование.</strong> Кто утвердил правило и при каких условиях заказ можно провести.</li>
+    <li><strong>Изменение.</strong> Версия конфигурации или расширения, где появилось предупреждение.</li>
+    <li><strong>Проверки.</strong> Сценарии, версия тестовой базы и фактический результат для каждого сценария.</li>
+    <li><strong>Выпуск.</strong> Кто принял изменение, какую версию установили и как вернуть предыдущую при сбое.</li>
+  </ul>
+</details>
+
+<nav class="resource-links" aria-label="Подробные материалы по процессу">
+  <a href="docs/operating-model.html">Рабочая модель</a>
+  <a href="docs/learning.html">Обучение</a>
+</nav>
+      <nav class="step-actions" aria-label="Вернуться к предыдущим шагам"><a class="prev-step" href="#choice">Назад к инструментам</a><a class="prev-step" href="#experience">Вернуться к примеру</a></nav>
+    </section>
+
+    <div id="downloads">
+      <span id="downloads-title" class="legacy-anchor"></span><span id="materials" class="legacy-anchor"></span><span id="materials-title" class="legacy-anchor"></span>
+      <details class="guide-library" id="files">
+        <summary>Материалы для скачивания</summary>
+        <ul>
+          <li id="decision-files-title">Матрица выбора: <a href="docs/decision.docx">Word</a>, <a href="docs/decision.pdf">PDF</a></li>
+          <li id="process-files-title">Руководство по процессу: <a href="docs/operating-model.docx">Word</a>, <a href="docs/operating-model.pdf">PDF</a>, <a href="templates/pilot.csv">журнал измерений</a></li>
+          <li id="slides-title">Презентация: <a href="training/briefing.html">в браузере</a>, <a href="training/briefing.pptx">PowerPoint</a>, <a href="training/briefing.pdf">PDF</a></li>
+          <li><a href="downloads/knowledge-map.pdf">Карта материалов на одном листе</a></li>
+        </ul>
+      </details>
+    </div>
+  </main>
+</body>
+</html>

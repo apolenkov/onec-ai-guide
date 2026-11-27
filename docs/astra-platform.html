@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Astra Developer Platform и 1С · ИИ в разработке 1С</title>
+  <link rel="stylesheet" href="../site.css">
+</head>
+<body class="chapter">
+  <a class="skip-link" href="#main">К содержанию</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html#map">ИИ в разработке 1С</a>
+    <a class="home-link" href="../index.html#map">Карта исследования</a>
+  </header>
+  <main class="reader" id="main">
+    <nav class="chapter-trail" aria-label="Путь в исследовании"><ol><li><a href="../index.html#map">Этапы и платформы</a></li><li><span aria-current="page">Astra Developer Platform и 1С</span></li></ol></nav><nav class="topic-neighbors" aria-label="Другие главы темы"><span>В этой теме</span><a href="sdlc-research.html"><span>Предыдущая глава</span>Практики по этапам SDLC</a></nav>
+    <article class="main-article">
+<h1 id="astra-developer-platform-и-разработка-на-1с">Astra Developer Platform и разработка на 1С</h1>
+<p><em>Срез публичных материалов на 27 ноября 2026 года.</em></p>
+<p>Astra Developer Platform (ADP) объединяет GitFlic для исходников и CI/CD, &quot;Боцман&quot; для управления инфраструктурой и инструменты наблюдения за приложениями. В анонсе 19 мая 2026 года Astra также описала слой ИИ для работы по циклу разработки. Для команды 1С практический вопрос в том, какой компонент сможет собрать ее конфигурацию, запустить тесты на нужной версии платформы и показать результат ревьюеру. <a href="https://astra.ru/about/press-center/news/gruppa-astra-predstavlyaet-astra-dev-platform-edinuyu-platformu-razrabotki-dlya-doverennogo-po/">Анонс выпуска</a>, <a href="https://astra.ru/software-services/pk/astra-dev-platform/">страница продукта</a>, <a href="https://astra.ru/local/ajax/download/docs/12/49201/">техническая архитектура</a></p>
+<h2 id="этапы-sdlc">Этапы SDLC</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Этап</th>
+<th>Публикует Astra/GitFlic</th>
+<th>Что добавить для 1С</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Проект и исходники</td>
+<td>ADP выдает сервис с репозиторием, CI/CD и записью в каталоге; шаблоны задают стандартный путь разработки.</td>
+<td>Выбрать формат исходников (EDT или выгрузка конфигурации), закрепить версии 1С/EDT и ветвление. BSL и EDT ADP не называет.</td>
+</tr>
+<tr>
+<td>Разработка</td>
+<td>ADP показывает OpenIDE и &quot;LLM/агенты&quot;; OpenIDE Pro подключает агентов.</td>
+<td>Добавить средства BSL и метаданных. BSL Language Server выпущен сообществом 1c-syntax, не ADP/GitFlic.</td>
+</tr>
+<tr>
+<td>Сборка и тесты</td>
+<td>GitFlic CI/CD запускает jobs и хранит артефакты. Документированы MR pipeline, Merge Result Pipeline и отчеты JUnit, SAST, DAST.</td>
+<td>Связать runner с EDT CLI/пакетным конфигуратором, тестовой базой и отчетами. По документации 1С, EDT CLI подготавливает проект для сборки конфигуратором; сценарии и команду тестов задайте отдельно.</td>
+</tr>
+<tr>
+<td>Поставка и эксплуатация</td>
+<td>ADP заявляет среды разработки, тестирования и предпродакшна, стандарт деплоя, откат и наблюдаемость. &quot;Боцман&quot; управляет Kubernetes-кластерами и приложениями.</td>
+<td>Настроить доставку артефакта 1С, обновление базы, миграции и откат. Kubernetes не подтверждает готовую контейнеризацию платформы или базы 1С.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Документы 1С: <a href="https://its.1c.ru/db/content/metod8dev/src/developers/scalability/methods/i8106015.htm">сборка CI через EDT CLI</a>, <a href="https://edt.1c.ru/faq/">FAQ EDT</a>, <a href="https://v8.1c.ru/upload/static/kip.pdf">сценарное тестирование</a>. Интеграцию с ADP надо проверить и настроить.</p>
+<h2 id="gates-и-тесты">Gates и тесты</h2>
+<p>GitFlic позволяет назначить согласующих, запретить автору аппрувить изменения, сбрасывать аппрувы после коммита и требовать успеха pipeline. Merge Result Pipeline доступен в Enterprise. Это общие gates; правила для 1С не опубликованы.</p>
+<p>Job может вызвать LLM через скрипт/API и сохранить unified diff как артефакт. Разработчик просматривает и применяет патч в веб-интерфейсе; затем проверки запускаются заново. Модель и поставщик не заданы. Источники: <a href="https://docs.gitflic.ru/latest/cicd/patch/">LLM-патчи, 06.05.2026</a>, <a href="https://docs.gitflic.ru/latest/en/cicd/pipeline/">pipeline</a>, <a href="https://docs.gitflic.ru/latest/project/merge_settings/">правила слияния</a>, <a href="https://docs.gitflic.ru/latest/cicd/gitflic-ci-yaml/">справочник CI/CD YAML</a>.</p>
+<p>Для gate 1С нужны BSL-проверки, сборка, тесты на отдельной базе и проверка обновления. Такая цепочка в документации ADP/GitFlic не описана.</p>
+<h2 id="bsl-edt-acp-и-mcp">BSL, EDT, ACP и MCP</h2>
+<p>В проверенных открытых материалах Astra и GitFlic не нашлось описания выпущенной интеграции ADP с BSL, 1С:EDT или MCP для 1С.</p>
+<p>В списке языков OpenIDE (Java, Kotlin, Go, JavaScript, TypeScript, Python, PHP) BSL не указан.</p>
+<p>В пресс-релизе OpenIDE Pro 2026.2 (24.09.2026) ACP назван протоколом подключения агентов: Astra AI Code, Claude Code, Codex, OpenCode и Cursor. Модели вызываются через выбранного агента, конкретные не указаны. Это функция OpenIDE Pro, не поддержка MCP в ADP.</p>
+<p>В проекте сообщества 1c-syntax расширение VS Code запускает BSL Language Server с MCP endpoint. Поддержка этой интеграции в ADP требует отдельного подтверждения поставщика. Проверьте версию и передачу контекста. Источники: <a href="https://astra.ru/about/press-center/news/openide-i-openide-pro-2026-2-ii-agenty-pryamo-v-ide-i-novye-vozmozhnosti-dlya-raboty-s-bazami-dannykh/">релиз OpenIDE Pro</a>, <a href="https://github.com/1c-syntax/bsl-language-server">BSL Language Server</a>, <a href="https://github.com/1c-syntax/vsc-language-1c-bsl/blob/master/package.json">настройки расширения VS Code и MCP</a>.</p>
+<h2 id="четыре-свидетельства-при-выборе">Четыре свидетельства при выборе</h2>
+<p>Перед выбором поставки запросите четыре свидетельства:</p>
+<ol>
+<li><strong>Данные.</strong> На обезличенном фрагменте проверьте, какие исходники видит агент, что уходит в запрос и где хранятся контекст/журналы. Зафиксируйте внешние адреса и исключенные каталоги.</li>
+<li><strong>Конфигурация.</strong> На закрепленных версиях 1С/EDT/runner соберите артефакт в чистом контуре, запустите BSL-проверки и сохраните версии, команды и результаты CI.</li>
+<li><strong>Контур и LLM.</strong> Получите схему трафика выбранной поставки, название агента, протокол (ACP или MCP), модель и endpoint. Проверьте отключение внешних вызовов. ACP в OpenIDE Pro не доказывает MCP в ADP.</li>
+<li><strong>Поддержка.</strong> Запросите матрицу версий ОС, GitFlic, &quot;Боцмана&quot;, EDT, платформы 1С, runner и агента, сценарии сборки/тестирования/обновления, зоны ответственности и сроки поддержки. В рассмотренной документации найти такую матрицу для 1С не удалось.</li>
+</ol>
+<p>При выборе ADP оцените отдельно общие функции платформы и затраты на подключение вашей конфигурации. Основанием включить поддержку 1С в требования к поставке послужат версия продукта, матрица совместимости и отчет о сборке и тестах.</p>
+
+    </article>
+  </main>
+  <footer class="site-footer"><a href="../index.html#map">К карте</a><span>Источники указаны в тексте</span></footer>
+</body>
+</html>
