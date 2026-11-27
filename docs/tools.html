@@ -14,7 +14,7 @@
     <a class="home-link" href="../index.html#map">Карта исследования</a>
   </header>
   <main class="reader" id="main">
-    <nav class="chapter-trail" aria-label="Путь в исследовании"><ol><li><a href="../index.html#map">Карта</a></li><li><a href="../index.html#choice">Выбор решения</a></li><li><a href="tools.html">Инструменты</a></li><li><span aria-current="page">Часть 1 из 2: Как выбирать</span></li></ol></nav><nav class="topic-neighbors" aria-label="Другие главы темы"><span>В этой теме</span><a href="decision.html"><span>Предыдущая глава</span>Выбор решения и процесса</a></nav>
+    <nav class="chapter-trail" aria-label="Путь в исследовании"><ol><li><a href="../index.html#map">Карта</a></li><li><a href="../practice.html#choice">Выбор решения</a></li><li><a href="tools.html">Инструменты</a></li><li><span aria-current="page">Часть 1 из 2: Как выбирать</span></li></ol></nav><nav class="topic-neighbors" aria-label="Другие главы темы"><span>В этой теме</span><a href="decision.html"><span>Предыдущая глава</span>Выбор решения и процесса</a></nav>
     <article class="main-article">
 <h1 id="каталог-инструментов-для-разработки-1с-с-ии">Каталог инструментов для разработки 1С с ИИ</h1>
 <nav class="part-navigation" aria-label="Части раздела"><ol>
@@ -66,6 +66,9 @@
 </tbody>
 </table></div>
 <p>Лицензия определяет условия кода. Отдельно проверьте условия модели, права агента и MCP-инструментов, сетевой маршрут и передаваемые данные. Одна и та же инструкция может работать с разными моделями и правами, а название плагина не определяет маршрут данных. Корпоративные договоры и настройки доступа в исследовании не проверялись.</p>
+<h2 id="где-может-пригодиться-herdr">Где может пригодиться Herdr</h2>
+<p>Если команда хранит исходники в Git, разработчик может открыть в Herdr отдельную рабочую копию ветки для ассистента и вторую для обычной работы. Например, в одной копии ассистент готовит тест, пока ревьюер смотрит изменение в другой.</p>
+<p>Это организация параллельной работы с файлами. Проверку BSL, запуск 1С на тестовой базе и решение о слиянии обеспечивает процесс команды. Вариант для команды с одним Конфигуратором и хранилищем описан в <a href="sdlc-research.html">практиках по этапам</a>. <a href="https://herdr.dev/tui/docs/cli-reference/">Документация Herdr о рабочих копиях Git</a></p>
 <h2 id="skills-и-набор-ролей">Skills и набор ролей</h2>
 <h3 id="1c-ssl-skills-узкий-навык-по-бсп"><code>1c-ssl-skills</code>: узкий навык по БСП</h3>
 <p>Переносимый skill для Codex, Claude Code и OpenCode. Содержит <code>skills/bsp/SKILL.md</code>, 24 справки и <code>scripts/bsp_api.py</code> для сверки API с XML-выгрузкой БСП. Лицензия MIT. Автор указывает БСП 3.1.11, для другой версии сверяйте содержание с поставкой.</p>
