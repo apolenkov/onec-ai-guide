@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Измерение результата · ИИ в разработке 1С</title>
+  <link rel="stylesheet" href="../site.css">
+</head>
+<body class="chapter">
+  <a class="skip-link" href="#main">К содержанию</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html">ИИ в разработке 1С</a>
+    <a class="home-link" href="../index.html">Обзор исследования</a>
+  </header>
+  <main class="reader" id="main">
+    <nav class="article-nav" aria-label="Разделы исследования">
+      <a href="decision.html">Выбор решения и процесса</a>
+        <a href="operating-model.html">Как устроена работа команды</a>
+        <a href="evidence.html">Разработка и бенчмарки</a>
+        <a href="business-cases.html">Бизнес-процессы</a>
+        <a href="tools.html">Инструменты</a>
+        <a href="pilot.html">Процесс разработки</a>
+        <a href="measurement.html">Измерение результата</a>
+        <a href="learning.html">Обучение</a>
+        <a href="../templates/task.html">Карточка задачи</a>
+    </nav>
+    <article class="main-article">
+<p class="chapter-return"><a href="measurement.html">К началу раздела «Измерение результата»</a></p>
+<h1>Измерение результата <span>· продолжение</span></h1>
+<nav class="part-navigation" aria-label="Части раздела"><ol>
+<li><a href="measurement.html">Рабочий ритм</a></li>
+<li><a href="measurement-02.html">Единица учета и формулы</a></li>
+<li><a href="measurement-03.html" aria-current="page">Пример чтения</a></li>
+</ol></nav>
+
+<h2 id="пример-чтения">Пример чтения</h2>
+<p>В строке <code>SYNTHETIC_DEMO</code> запланировано пять обязательных проверок. Четыре пройдены, одна пропущена. Несмотря на успешные тесты, выпуск заблокирован, <code>quality_guardrail_pass=no</code>. Планируемый <code>release_id</code> не входит в показатели продуктивных развертываний. Указанная сумма отражает только записанные расходы по задаче. Пример вымышленный и не описывает фактическую работу команды.</p>
+<p>Для учета используйте <a href="../templates/pilot.csv">журнал задач (CSV)</a>. Строка с типом <code>SYNTHETIC_DEMO</code> приведена только для демонстрации формата.</p>
+<h3 id="короткий-словарь-csv">Короткий словарь CSV</h3>
+<ul>
+<li><code>date</code>, <code>period</code>, <code>team_group</code>, <code>system_id</code>, <code>process_version</code> задают дату задачи, период сводки, группу команды, ИС и применявшийся порядок работы.</li>
+<li><code>task_id</code>, <code>task_class</code>, <code>complexity</code> описывают единицу учета. <code>platform_version</code> и <code>configuration_version</code> фиксируют окружение.</li>
+<li><code>ai_tool</code>, <code>ai_tool_version</code>, <code>model_id</code>, <code>ai_used</code>, <code>ai_request_count</code>, <code>ai_request_minutes</code> фиксируют фактическое применение ИИ. Часы проверки и переделки ответа лежат в <code>ai_review_rework_hours</code>.</li>
+<li><code>task_to_ready_hours</code> и <code>ready_to_release_hours</code> измеряют календарное время на уровне задачи. Остальные поля с <code>_hours</code> измеряют человеко-часы. <code>ai_request_minutes</code> измеряются минутами. Поля с <code>_rub</code> измеряются рублями.</li>
+<li><code>release_id</code>, <code>release_status</code>, <code>deployed_at</code>, <code>release_failed_immediate</code>, <code>release_rework_unplanned</code>, <code>recovery_minutes</code> относятся к продуктивному развертыванию. Агрегируйте их один раз на пару <code>system_id</code> и <code>release_id</code>. Статус <code>deployed</code> означает, что продуктивная выкладка состоялась, даже если ее потом откатили. <code>blocked</code> означает, что продуктивного развертывания не было.</li>
+<li><code>required_checks_*</code> и <code>tests_*</code> содержат число запланированных, пройденных, проваленных и пропущенных проверок. <code>task_has_defect_14d</code> и <code>defect_observation_matured</code> отслеживают дефект задачи после выпуска.</li>
+<li><code>quality_guardrail_pass</code> равно <code>yes</code> только если выпуск разрешен по всем обязательным условиям. <code>notes</code> хранит короткую оговорку о данных.</li>
+</ul>
+
+    </article>
+  </main>
+  <footer class="site-footer"><a href="../index.html">К обзору</a><span>Источники указаны в тексте</span></footer>
+</body>
+</html>
