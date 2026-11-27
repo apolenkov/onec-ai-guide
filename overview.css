@@ -77,6 +77,10 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--yellow); outli
 .more-reading a { color: var(--forest); font-size: .82rem; font-weight: 700; }
 .old-route { display: none; }
 .old-route:target { display: block; width: min(calc(100% - 44px), 1236px); margin: 20px auto; padding: 20px; border: 1px solid var(--rule); background: var(--paper); }
+@media (min-width: 761px) and (max-width: 960px) {
+  .case-strip { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); }
+  .case-strip .case-limit { grid-column: 1 / -1; max-width: 75ch; }
+}
 @media (max-width: 760px) {
   .overview { padding-inline: 22px; }
   .overview-header { min-height: 63px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 10px; padding: 12px 0; }
