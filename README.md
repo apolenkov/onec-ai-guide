@@ -1,9 +1,5 @@
-# ИИ в 1С: карта материалов
+# ИИ в 1С: интерактивный маршрут
 
-[Открыть карту знаний](https://apolenkov.github.io/onec-ai-guide/#map) · [Скачать карту на одном листе](https://apolenkov.github.io/onec-ai-guide/downloads/knowledge-map.pdf)
+Начните с [работающего примера заказа покупателя](https://apolenkov.github.io/onec-ai-guide/#example), затем пройдите три шага: [опыт применения](https://apolenkov.github.io/onec-ai-guide/#experience) → [выбор подхода](https://apolenkov.github.io/onec-ai-guide/#choice) → [работа команды](https://apolenkov.github.io/onec-ai-guide/#workflow).
 
-На сайте собраны опыт применения ИИ в 1С, варианты выбора решения и материалы по работе команды от задачи до выпуска.
-
-- [Матрица выбора решения и процесса](https://apolenkov.github.io/onec-ai-guide/docs/decision.html)
-- [Практический порядок работы команды](https://apolenkov.github.io/onec-ai-guide/docs/operating-model.html)
-- [Презентация](https://apolenkov.github.io/onec-ai-guide/training/briefing.pptx) · [PDF](https://apolenkov.github.io/onec-ai-guide/training/briefing.pdf)
+На главной можно открывать каждый шаг по мере готовности или выбрать все три сразу. [Презентация PDF](https://apolenkov.github.io/onec-ai-guide/training/briefing.pdf) · [карта материалов на одном листе](https://apolenkov.github.io/onec-ai-guide/downloads/knowledge-map.pdf).
