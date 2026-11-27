@@ -8,15 +8,25 @@ const stageTitles = new Map([
   ["support", "Сопровождение"],
 ]);
 
-const sourceStage = new URLSearchParams(location.search).get("stage");
-if (stageTitles.has(sourceStage)) {
+const context = new URLSearchParams(location.search);
+const stage = context.get("stage");
+const fromStage = stageTitles.has(stage);
+const fromOverview = context.get("from") === "overview";
+
+if (fromStage || fromOverview) {
   for (const link of document.querySelectorAll("[data-return-link]")) {
-    link.hash = sourceStage;
-    link.textContent = `← К этапу «${stageTitles.get(sourceStage)}»`;
+    if (fromStage) {
+      link.hash = stage;
+      link.textContent = `← К этапу «${stageTitles.get(stage)}»`;
+    } else {
+      link.href = new URL("index.html#sources", link.href).href;
+      link.textContent = "← К источникам на главной";
+    }
   }
   for (const link of document.querySelectorAll("[data-stage-link]")) {
     const target = new URL(link.href);
-    target.searchParams.set("stage", sourceStage);
+    if (fromStage) target.searchParams.set("stage", stage);
+    else target.searchParams.set("from", "overview");
     link.href = target.href;
   }
 }
