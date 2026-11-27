@@ -331,7 +331,13 @@ body.map-page {
   }
 
   .map-root::after {
+    right: 50%;
+    left: auto;
+    width: calc(50vw - 35px);
     height: 30px;
+    background:
+      linear-gradient(#8aa94b, #8aa94b) right top / 2px 30px no-repeat,
+      linear-gradient(90deg, #8aa94b, #8aa94b) left bottom / 100% 2px no-repeat;
   }
 
   .map-branches::before {
