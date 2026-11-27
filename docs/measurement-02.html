@@ -10,19 +10,18 @@
 <body class="chapter">
   <a class="skip-link" href="#main">К содержанию</a>
   <header class="site-header">
-    <a class="brand" href="../index.html#map">ИИ в разработке 1С</a>
-    <a class="home-link" href="../index.html#map">Карта исследования</a>
+    <a class="chapter-return-link" href="../index.html#library" data-return-link>← К библиотеке материалов</a>
   </header>
   <main class="reader" id="main">
-    <nav class="chapter-trail" aria-label="Путь в исследовании"><ol><li><a href="../index.html#map">Карта</a></li><li><a href="../practice.html#workflow">Организация работы</a></li><li><a href="measurement.html">Измерение результата</a></li><li><span aria-current="page">Часть 2 из 3: Единица учета и формулы</span></li></ol></nav><nav class="topic-neighbors" aria-label="Другие главы темы"><span>В этой теме</span><a href="pilot.html"><span>Предыдущая глава</span>Процесс разработки</a><a href="learning.html"><span>Следующая глава</span>Обучение</a></nav>
+    <div class="chapter-context"><p>Организация работы</p></div>
     <article class="main-article">
-<p class="chapter-return"><a href="measurement.html">К началу раздела «Измерение результата»</a></p>
+<p class="chapter-start"><a href="measurement.html" data-stage-link>К началу главы «Измерение результата»</a></p>
 <h1>Измерение результата <span>· продолжение</span></h1>
-<nav class="part-navigation" aria-label="Части раздела"><ol>
-<li><a href="measurement.html">Рабочий ритм</a></li>
-<li><a href="measurement-02.html" aria-current="page">Единица учета и формулы</a></li>
-<li><a href="measurement-03.html">Пример чтения</a></li>
-</ol></nav>
+<details class="part-navigation"><summary>Содержание главы · часть 2 из 3</summary><nav aria-label="Части главы"><ol>
+<li><a href="measurement.html" data-stage-link>Рабочий ритм</a></li>
+<li><a href="measurement-02.html" data-stage-link aria-current="page">Единица учета и формулы</a></li>
+<li><a href="measurement-03.html" data-stage-link>Пример чтения</a></li>
+</ol></nav></details>
 
 <h2 id="единица-учета-и-формулы">Единица учета и формулы</h2>
 <p>Основная единица учета: одна карточка доработки. Один и тот же <code>task_id</code> учитывается один раз. В задаче могут быть разные критерии и тесты. Каждую обязательную проверку перечисляйте до разработки.</p>
@@ -135,9 +134,11 @@
 <p><code>total_person_hours</code> включает всю работу команды, включая ревью и переделку ответа ИИ. Для полной стоимости задачи умножьте эти часы на согласованную часовую ставку и добавьте прямые расходы на ИИ.</p>
 <p><code>ai_recorded_task_cost_rub</code> показывает записанные расходы по задаче. Это прямые расходы плюс <code>ai_review_rework_hours × ai_labor_rate_rub</code>. Зафиксируйте способ распределения лицензии и API-расходов между задачами.</p>
 <p>В этом поле нет общих затрат на подготовку, интеграцию, обучение, сопровождение и управление. Это не полная стоимость использования ИИ, поэтому по этой сумме нельзя оценить окупаемость. Для расчета ROI нужны все прямые и общие расходы, а также измеримая выгода в согласованной денежной единице. <code>ai_review_rework_hours</code> уже входит в <code>total_person_hours</code>, не прибавляйте эти часы повторно.</p>
-
+<p class="chapter-continue"><span>Дальше в этой главе</span><a href="measurement-03.html" data-stage-link>Пример чтения →</a></p>
     </article>
+    <details class="topic-neighbors"><summary>Другие главы этой темы</summary><nav aria-label="Другие главы темы"><a href="pilot.html" data-stage-link><span>Предыдущая глава</span>Процесс разработки</a><a href="learning.html" data-stage-link><span>Следующая глава</span>Обучение</a></nav></details>
   </main>
-  <footer class="site-footer"><a href="../index.html#map">К карте</a><span>Источники указаны в тексте</span></footer>
+  <footer class="site-footer"><a href="../index.html#library" data-return-link>К библиотеке материалов</a><span>Источники указаны в тексте</span></footer>
+  <script src="../chapter-return.js" defer></script>
 </body>
 </html>
