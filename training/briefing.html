@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ru">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  /><title>ИИ в команде 1С. Пилот</title>
+  <link rel="stylesheet" href="briefing.css">
+  <body>
+    <main class="deck">
+      <section class="slide active">
+        <div class="top">
+          <span class="lime">РАБОЧАЯ СЕССИЯ 1С</span><span>01 / 06</span>
+        </div>
+        <div class="hero">ОТ ПОСТАНОВКИ ДО ВЫПУСКА</div>
+        <h1>ИИ в команде<br />1С: с чего начать</h1>
+        <p class="lede">
+          Пилот на одной небольшой доработке. Четкая задача, тестовая база,
+          проверяемый результат.
+        </p>
+        <div class="bottom">
+          <span class="date">27 НОЯБРЯ 2026 / 10 МИНУТ</span
+          ><span class="huge">01</span>
+        </div>
+        <div class="foot">
+          <span class="src"
+            >Опора процесса:
+            <a href="https://its.1c.ru/db/v8std/browse/13/-1"
+              >стандарты разработки 1С</a
+            >
+            /
+            <a
+              href="https://its.1c.ru/db/content/edtdoc/src/topics/t000219.html"
+              >постепенный переход к EDT и Git</a
+            ></span
+          ><span>ПИЛОТ</span>
+        </div>
+      </section>
+      <section class="slide">
+        <div class="top">
+          <span class="lime">СВИДЕТЕЛЬСТВА</span><span>02 / 06</span>
+        </div>
+        <h2>Есть рабочие примеры.<br />Общий эффект еще предстоит измерить.</h2>
+        <div class="ev">
+          <div class="huge">
+            4<span style="font-size: 0.4em; letter-spacing: -0.04em"> ч</span>
+          </div>
+          <div class="copy">
+            <div class="quote">
+              Новый документ в 1С собрали и перенесли в рабочую базу за две
+              итерации примерно по два часа.<small
+                >Александр Свойкин, руководитель разработки DNS. Публикация от
+                23.10.2026</small
+              >
+            </div>
+            <div class="box">
+              Автор оценивает обычный срок без агентов как минимум в два дня.
+              Это один рассказ о проекте, без контрольного замера.
+            </div>
+            <p style="color: var(--muted); font-size: clamp(13px, 1.2vw, 17px)">
+              1С объявила бета-версию API продукта Напарник 25 ноября с запуском
+              1 декабря 2026 года. На дату этой презентации API еще не запущен.
+            </p>
+          </div>
+        </div>
+        <div class="foot">
+          <span class="src"
+            >Источники:
+            <a
+              href="https://infostart.ru/journal/news/mir-1s/kak-s-pomoshchyu-ii-agentov-sozdali-novyy-dokument-v-1s-za-chetyre-chasa-vmesto-dvukh-dney_2826336/"
+              >кейс DNS</a
+            >
+            /
+            <a href="https://1c.ru/news/info.jsp?id=35186"
+              >объявление 1С от 25 ноября</a
+            ></span
+          ><span>ФАКТЫ И ОЦЕНКИ</span>
+        </div>
+      </section>
+      <section class="slide">
+        <div class="top">
+          <span class="lime">ПРОЦЕСС</span><span>03 / 06</span>
+        </div>
+        <h2>Каждое изменение проходит<br />одни и те же ворота качества.</h2>
+        <div class="steps">
+          <div class="step">
+            <b>01 / ЗАПРОС</b>
+            <h3>Понять задачу</h3>
+            <p>Пользователь, боль, границы, ценность</p>
+          </div>
+          <div class="step">
+            <b>02 / КРИТЕРИИ</b>
+            <h3>Описать результат</h3>
+            <p>Примеры, ожидаемое поведение, доступы</p>
+          </div>
+          <div class="step">
+            <b>03 / РАЗРАБОТКА</b>
+            <h3>Изменить код</h3>
+            <p>Маленький diff, стандарты, тесты</p>
+          </div>
+          <div class="step">
+            <b>04 / ПРИЕМКА</b>
+            <h3>Проверить</h3>
+            <p>Тестовая база, права, ошибки, ревью</p>
+          </div>
+          <div class="step">
+            <b>05 / ВЫПУСК</b>
+            <h3>Передать владельцу</h3>
+            <p>Релиз, контроль, понятный откат</p>
+          </div>
+        </div>
+        <div class="box" style="margin-top: 12px">
+          <b class="lime">Старт из Конфигуратора:</b> один объект в копии базы →
+          выгрузка конфигурации → ветка Git → проверки → перенос после приемки.
+          EDT подключить по мере готовности команды.
+        </div>
+        <div class="foot">
+          <span class="src"
+            >Сверяйтесь со
+            <a href="https://its.1c.ru/db/v8std/browse/13/-1">стандартами 1С</a>
+            /
+            <a
+              href="https://its.1c.ru/db/content/edtdoc/src/topics/t000219.html"
+              >инструкция перехода к EDT и Git</a
+            ></span
+          ><span>МАЛЫЙ ШАГ</span>
+        </div>
+      </section>
+      <section class="slide">
+        <div class="top">
+          <span class="lime">УПРАЖНЕНИЕ</span><span>04 / 06</span>
+        </div>
+        <h2>За 20 минут проверить<br />одну задачу из реальной работы.</h2>
+        <div class="grid">
+          <div class="card">
+            <div class="tag">ПРИМЕР, УЧЕБНЫЕ ДАННЫЕ</div>
+            <h3>Проверка даты отгрузки</h3>
+            <p>
+              При проведении документа Заказ покупателя предупредить, если дата
+              отгрузки раньше даты заказа. После подтверждения пользователь
+              может продолжить.
+            </p>
+          </div>
+          <div class="card">
+            <div class="tag">КРИТЕРИИ ПРИЕМКИ</div>
+            <ul>
+              <li>Дата равна или позже даты заказа. Предупреждения нет.</li>
+              <li>
+                Ранняя дата. Предупреждение есть, документ проводится после
+                подтверждения.
+              </li>
+              <li>
+                Пустая дата. Аналитик задает правило до начала разработки.
+              </li>
+              <li>Новый и существующие тесты проходят.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="tag">УЧАСТНИКИ</div>
+            <h3>Аналитик → разработчик → проверяющий</h3>
+            <p>
+              Аналитик утверждает пример и исключения. Разработчик просит агента
+              показать план, меняет код и проверяет diff. Проверяющий запускает
+              сценарии.
+            </p>
+          </div>
+          <div class="card">
+            <div class="tag">УСЛОВИЯ ВЫПУСКА</div>
+            <h3>Результат воспроизводится</h3>
+            <p>
+              Ревью пройдено. Тесты зеленые. Владелец подтвердил поведение. Есть
+              версия до изменения и способ вернуть ее.
+            </p>
+          </div>
+        </div>
+        <div class="foot">
+          <span class="src"
+            >Условный учебный пример. Тестовая база, вымышленные данные, агент
+            без доступа к продуктивной базе.</span
+          ><span>20 МИНУТ</span>
+        </div>
+      </section>
+      <section class="slide">
+        <div class="top">
+          <span class="lime">HERDR</span><span>05 / 06</span>
+        </div>
+        <h2>Три панели. Один проверяемый поток.</h2>
+        <div class="panes">
+          <div class="pane">
+            <div class="tag">01 / ЗАДАЧА И КОД</div>
+            <div class="screen">
+              <span class="ok">Критерии</span><br />ранняя дата →
+              предупреждение<br />подтвердить → документ проводится<br /><br /><span
+                class="ok"
+                >Агент</span
+              ><br />покажи план и diff.<br />Не меняй другие объекты.
+            </div>
+            <p>Разработчик работает с агентом в отдельной ветке.</p>
+          </div>
+          <div class="pane">
+            <div class="tag">02 / ТЕСТЫ</div>
+            <div class="screen">
+              $ lint → результаты<br />$ unit → статус тестов<br />$ smoke →
+              статус проверки<br /><br /><span style="color: #899387"
+                >копия базы</span
+              >
+            </div>
+            <p>Запуск тестов на копии. Журнал доступен команде.</p>
+          </div>
+          <div class="pane">
+            <div class="tag">03 / РЕВЬЮ</div>
+            <div class="screen">
+              □ совпадает ли diff<br />□ выполнены ли критерии<br />□ проверены
+              ли права<br />□ понятен ли откат<br /><br /><span class="ok"
+                >решает человек</span
+              >
+            </div>
+            <p>Проверяющий оценивает изменение независимо от автора.</p>
+          </div>
+        </div>
+        <div class="legend">
+          <span>Herdr сохраняет процессы при закрытом окне</span
+          ><span>Состояние агентов видно в панели</span>
+        </div>
+        <div class="foot">
+          <span class="src"
+            ><a href="https://herdr.dev/docs/concepts/">Документация Herdr</a>,
+            пространства, вкладки, панели и состояния. </span
+          ><span>РАБОЧАЯ РАСКЛАДКА</span>
+        </div>
+      </section>
+      <section class="slide">
+        <div class="top">
+          <span class="lime">МЕТРИКИ И РЕШЕНИЕ</span><span>06 / 06</span>
+        </div>
+        <h2>
+          Сначала записать исходный уровень.<br />Потом сравнивать похожие
+          задачи.
+        </h2>
+        <div class="grid">
+          <div class="card">
+            <div class="tag">СЧИТАТЬ НА КАЖДОЙ ЗАДАЧЕ</div>
+            <ul>
+              <li>Время от старта до принятия</li>
+              <li>Активные минуты человека</li>
+              <li>Циклы доработки после ревью</li>
+              <li>Пройденные и запущенные тесты</li>
+              <li>Дефекты и срочные исправления после выпуска</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="tag">ОТДЕЛИТЬ ВКЛАД ПРОЦЕССА И ИИ</div>
+            <ul>
+              <li>Новые правила без ИИ показывают эффект процесса.</li>
+              <li>
+                Сходные задачи по этим правилам с ИИ показывают добавочный
+                эффект ИИ.
+              </li>
+              <li>
+                Группировать по сложности. Указывать медиану, размер выборки и
+                стоимость.
+              </li>
+              <li>
+                Успех: меньше трудозатрат при прежнем или лучшем качестве.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="box" style="margin-top: 12px">
+          <b class="lime">Решение сегодня:</b> выбрать задачу, аналитика,
+          разработчика и независимого проверяющего. Согласовать критерии,
+          тестовую базу и дату старта.
+        </div>
+        <div class="foot">
+          <span class="src"
+            >Метрики здесь задают план измерения. Результаты появятся после
+            пилота. Записывайте время, ревью, тесты и инциденты.</span
+          ><span>СЛЕДУЮЩИЙ ШАГ</span>
+        </div>
+      </section>
+    </main>
+    <div class="pager" id="pager">01 / 06 &nbsp; ← →</div>
+    <script>
+      const slides = [...document.querySelectorAll(".slide")];
+      let cur = 0;
+      function show(n) {
+        cur = (n + slides.length) % slides.length;
+        slides.forEach((s, i) => s.classList.toggle("active", i === cur));
+        document.getElementById("pager").textContent =
+          String(cur + 1).padStart(2, "0") +
+          " / " +
+          String(slides.length).padStart(2, "0") +
+          "  ← →";
+      }
+      document.addEventListener("keydown", (e) => {
+        if (["ArrowRight", " ", "PageDown"].includes(e.key)) {
+          e.preventDefault();
+          show(cur + 1);
+        } else if (["ArrowLeft", "PageUp"].includes(e.key)) {
+          e.preventDefault();
+          show(cur - 1);
+        } else if (e.key === "Home") show(0);
+        else if (e.key === "End") show(slides.length - 1);
+      });
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest("a")) show(cur + 1);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#173b30" />
+    <meta
+      name="description"
+      content="Российские примеры ИИ в 1С, инструменты, обучение и план пилота для команды"
+    />
+    <title>ИИ в разработке на 1С, обзор и план проверки</title>
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body class="home">
+    <a class="skip-link" href="#main">К основному содержанию</a>
+    <header class="site-header">
+      <a
+        class="brand"
+        href="./"
+        aria-label="Исследование ИИ в работе команды 1С, главная"
+      >
+        <span class="brand-mark" aria-hidden="true">1С</span>
+        <span>Работа команды 1С</span>
+      </a>
+      <span class="edition">Исследование, Россия, 27 ноября 2026</span>
+    </header>
+
+    <main id="main" class="reader">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span></span>Обзор применения искусственного интеллекта
+          </p>
+          <h1 id="page-title">ИИ в разработке 1С</h1>
+          <p class="hero-lead">
+            Сравните две похожие доработки: одну выполните с ИИ, другую без.
+            Учтите время на проверку и переделку, а затем проверьте обе по
+            одинаковым критериям.
+          </p>
+          <a class="button button-bright" href="docs/pilot.html"
+            >Посмотреть план пилота <span aria-hidden="true">↗</span></a
+          >
+          <a class="hero-secondary" href="#materials"
+            >Открыть результаты и материалы <span aria-hidden="true">↓</span></a
+          >
+        </div>
+        <aside class="hero-callout" aria-label="Предлагаемое начало пилота">
+          <div class="callout-index">НАЧАТЬ С МАЛОГО</div>
+          <h2>Две похожие доработки</h2>
+          <ol>
+            <li><span>01</span>Карточка задачи и согласованные критерии.</li>
+            <li><span>02</span>Проверка обеих доработок на учебной базе.</li>
+            <li><span>03</span>На одной задаче команда применяет ИИ.</li>
+            <li><span>04</span>Сравнение времени и качества результата.</li>
+          </ol>
+          <p>
+            Начать можно в знакомом Конфигураторе, добавляя проверки постепенно.
+          </p>
+        </aside>
+      </section>
+
+      <nav class="article-nav" aria-label="Содержание обзора">
+        <a href="#summary">Вывод</a>
+        <a href="#cases">Опыт и цифры</a>
+        <a href="#pilot">Пилот</a>
+        <a href="#materials">Материалы</a>
+      </nav>
+
+      <article class="main-article">
+        <section
+          id="summary"
+          class="intro-block"
+          aria-labelledby="summary-title"
+        >
+          <div class="section-label">Короткий вывод</div>
+          <div>
+            <h2 id="summary-title">
+              ИИ уже помогает в разных частях работы с 1С.
+            </h2>
+            <p>
+              1С:Напарник помогает в среде EDT. Публикуются примеры создания
+              доработок с агентами и инструменты, которые дают помощникам
+              контекст BSL и метаданных. Есть решения для обработки первичных
+              документов, вопросов о данных и прогноза спроса.
+            </p>
+            <p>
+              Открытые цифры относятся к отдельным задачам и самооценкам. Они не
+              обещают такой же выигрыш другой команде. Вывод появится после
+              сопоставимого учета сроков, затрат и качества результата.
+            </p>
+          </div>
+        </section>
+
+        <section id="cases" class="cases-block" aria-labelledby="cases-title">
+          <div class="section-label">Опубликованные примеры</div>
+          <div class="cases-content">
+            <h2 id="cases-title">Что показали три опубликованных кейса</h2>
+            <div class="case-grid">
+              <article class="case-card">
+                <div class="case-overline">
+                  <span class="status-dot"></span> Разработка, рассказ участника
+                </div>
+                <p class="stat">≈4<span class="unit"> часа</span></p>
+                <h3>Новый документ для закупок DNS</h3>
+                <p>
+                  Александр Свойкин пишет, что две итерации заняли примерно по
+                  два часа и документ перенесли в рабочую базу. Обычный срок без
+                  агентов он оценил минимум в два дня. Контрольного замера не
+                  было.
+                </p>
+                <a
+                  class="text-link"
+                  href="https://infostart.ru/journal/news/mir-1s/kak-s-pomoshchyu-ii-agentov-sozdali-novyy-dokument-v-1s-za-chetyre-chasa-vmesto-dvukh-dney_2826336/"
+                  >Читать кейс DNS <span aria-hidden="true">↗</span></a
+                >
+              </article>
+              <article class="case-card">
+                <div class="case-overline">
+                  <span class="status-dot"></span> Эксплуатация, самооценка
+                </div>
+                <p class="stat">≈2<span class="unit"> ч в неделю</span></p>
+                <h3>Пилот 1С:Напарника в Magnit Tech</h3>
+                <p>
+                  Средняя оценка участников. После пробного запуска с пятью сотрудниками
+                  в пилоте участвовали около 50 специалистов. Сроки разработки
+                  менялись вместе со сложностью задач и отпусками. Эффект на
+                  дефекты не подтвердили.
+                </p>
+                <a
+                  class="text-link"
+                  href="https://1c.ru/rus/partners/konf0625.jsp"
+                  >Материалы форума 1С <span aria-hidden="true">↗</span></a
+                >
+              </article>
+              <article class="case-card">
+                <div class="case-overline">
+                  <span class="status-dot"></span> Инструменты, пилот на задачах
+                </div>
+                <p class="stat stat-words">Время<br />не измерили</p>
+                <h3>Пилот серверов MCP в Ресурсном центре Инфостарта</h3>
+                <p>
+                  Участники получали рабочие результаты и проверяли гипотезы, но
+                  устойчивую оценку трудозатрат центр не получил. Код, выводы и
+                  рекомендации проверяли специалисты.
+                </p>
+                <a
+                  class="text-link"
+                  href="https://infostart.ru/journal/news/mir-1s/infostart-mcp-proverili-na-realnykh-zadachakh-1s-pervye-rezultaty-pilota_2819038/"
+                  >Читать об опыте MCP <span aria-hidden="true">↗</span></a
+                >
+              </article>
+            </div>
+            <p class="evidence-note">
+              Другие кейсы, проверка BSL и поиск по ИТС разобраны в
+              <a href="docs/evidence.html">обзоре источников</a>.
+            </p>
+          </div>
+        </section>
+
+        <section id="pilot" class="pilot-block" aria-labelledby="pilot-title">
+          <div class="section-label">Первый шаг</div>
+          <div class="pilot-content">
+            <div class="pilot-copy">
+              <h2 id="pilot-title">Проверить пару похожих доработок.</h2>
+              <p>
+                Выберите две сопоставимые задачи, например похожие проверки
+                заполнения документов. Аналитик подтверждает ожидаемое
+                поведение, разработчик предлагает изменение, проверяющий
+                запускает те же сценарии на учебной базе.
+              </p>
+              <p>
+                Считайте полные трудозатраты, включая ревью и переделки.
+                Запишите, прошли ли критерии и обязательные проверки. Первая
+                пара покажет, работает ли сам порядок. Экономию оценивают на
+                серии сопоставимых задач.
+              </p>
+              <a class="button button-dark" href="docs/pilot.html"
+                >Как провести пилот <span aria-hidden="true">↗</span></a
+              >
+            </div>
+            <div class="flow" aria-label="Шаги задачи">
+              <div class="flow-step">
+                <span>1</span>
+                <div>
+                  <strong>Задача</strong><small>ожидаемый результат</small>
+                </div>
+              </div>
+              <div class="flow-arrow" aria-hidden="true">↓</div>
+              <div class="flow-step">
+                <span>2</span>
+                <div>
+                  <strong>Изменение</strong><small>с ИИ или без него</small>
+                </div>
+              </div>
+              <div class="flow-arrow" aria-hidden="true">↓</div>
+              <div class="flow-step">
+                <span>3</span>
+                <div>
+                  <strong>Проверка</strong><small>одинаковый сценарий</small>
+                </div>
+              </div>
+              <div class="flow-arrow" aria-hidden="true">↓</div>
+              <div class="flow-step">
+                <span>4</span>
+                <div>
+                  <strong>Решение</strong><small>по качеству и затратам</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="materials"
+          class="materials-block"
+          aria-labelledby="materials-title"
+        >
+          <div class="section-label">Материалы</div>
+          <div>
+            <h2 id="materials-title">Материалы для команды</h2>
+            <p class="materials-intro">
+              Источники, инструменты, обучение и готовые материалы для команды.
+            </p>
+            <div class="materials-grid">
+              <a
+                class="material-card material-feature"
+                href="docs/evidence.html"
+              >
+                <span class="material-number">ИСТОЧНИКИ</span>
+                <strong>Что проверяли в опубликованных кейсах</strong>
+                <span
+                  >Промышленные примеры, бенчмарки и пределы сравнения
+                  <span aria-hidden="true">↗</span></span
+                >
+              </a>
+              <a class="material-card" href="docs/business-cases.html"
+                ><span class="material-number">БИЗНЕС</span
+                ><strong>ИИ для пользователей и бизнеса</strong
+                ><span>Поиск по ИТС, документы, прогнозирование</span></a
+              >
+              <a class="material-card" href="docs/pilot.html"
+                ><span class="material-number">ПРОЦЕСС</span
+                ><strong>Процесс от запроса до выпуска</strong
+                ><span>Роли, критерии, тесты, приемка и откат</span></a
+              >
+              <a class="material-card" href="docs/measurement.html"
+                ><span class="material-number">ИЗМЕРЕНИЯ</span
+                ><strong>Как посчитать результат</strong
+                ><span>Сроки, трудозатраты, качество и журнал</span></a
+              >
+              <a class="material-card" href="docs/tools.html"
+                ><span class="material-number">ИНСТРУМЕНТЫ</span
+                ><strong>Навыки и инструменты</strong
+                ><span>Среда 1С, контекст, тестирование и доступ</span></a
+              >
+              <a class="material-card" href="docs/herdr.html"
+                ><span class="material-number">HERDR</span
+                ><strong>Разработка, тесты и ревью</strong
+                ><span>Как разложить работу в Herdr</span></a
+              >
+              <a class="material-card" href="docs/learning.html"
+                ><span class="material-number">ОБУЧЕНИЕ</span
+                ><strong>Программа обучения</strong
+                ><span>Упражнения и материалы для ведущего</span></a
+              >
+              <a class="material-card" href="templates/task.html"
+                ><span class="material-number">ШАБЛОН</span
+                ><strong>Карточка задачи</strong
+                ><span>Постановка и связь требований с тестами</span></a
+              >
+              <a class="material-card" href="templates/pilot.csv"
+                ><span class="material-number">ТАБЛИЦА</span
+                ><strong>Журнал измерений</strong
+                ><span>Открыть или сохранить файл CSV</span></a
+              >
+              <a
+                class="material-card material-slides"
+                href="training/briefing.html"
+                ><span class="material-number">СЛАЙДЫ</span
+                ><strong>Рассказ за десять минут</strong
+                ><span
+                  >Открыть презентацию в браузере
+                  <span aria-hidden="true">↗</span></span
+                ></a
+              >
+              <a
+                class="material-card material-download"
+                href="training/briefing.pdf"
+                download
+                ><span class="material-number">PDF</span
+                ><strong>Скачать презентацию</strong
+                ><span
+                  >Версия для пересылки <span aria-hidden="true">↓</span></span
+                ></a
+              >
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="./"
+        ><span class="brand-mark" aria-hidden="true">1С</span
+        ><span>ИИ в работе команды 1С</span></a
+      >
+      <span>Россия, 27 ноября 2026 года</span>
+      <a href="#main">Наверх ↑</a>
+    </footer>
+  </body>
+</html>

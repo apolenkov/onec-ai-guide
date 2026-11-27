@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Измерение результата · ИИ в разработке 1С</title>
+  <link rel="stylesheet" href="../site.css">
+</head>
+<body class="chapter">
+  <a class="skip-link" href="#main">К содержанию</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html">ИИ в разработке 1С</a>
+    <a class="home-link" href="../index.html">Обзор исследования</a>
+  </header>
+  <main class="reader" id="main">
+    <nav class="article-nav" aria-label="Разделы исследования">
+      <a href="evidence.html">Разработка и бенчмарки</a>
+        <a href="business-cases.html">Бизнес-процессы</a>
+        <a href="tools.html">Инструменты</a>
+        <a href="pilot.html">Процесс разработки</a>
+        <a href="measurement.html">Измерение результата</a>
+        <a href="learning.html">Обучение</a>
+        <a href="herdr.html">Рабочее пространство Herdr</a>
+        <a href="../templates/task.html">Карточка задачи</a>
+    </nav>
+    <article class="main-article">
+<p class="chapter-return"><a href="measurement.html">К началу раздела «Измерение результата»</a></p>
+<h1>Измерение результата <span>· продолжение</span></h1>
+<nav class="part-navigation" aria-label="Части раздела"><ol>
+<li><a href="measurement.html">Единицы и формулы</a></li>
+<li><a href="measurement-02.html" aria-current="page">Как читать CSV</a></li>
+</ol></nav>
+
+<h3 id="как-читать-csv">Как читать CSV</h3>
+<p>В пилоте одна строка описывает одну задачу. <code>task_id</code> уникален. Запишите дату, группу, версии платформы и конфигурации, инструмент/агента и модель. <code>release_id</code> одинаков у всех задач одного релиза.</p>
+<p>В статистике выпусков сначала оставьте одну запись на каждый <code>release_id</code> со статусом <code>deployed</code>. Поля <code>deployed_at</code>, <code>release_failed_immediate</code>, <code>release_rework_unplanned</code> и <code>recovery_minutes</code> относятся к релизу. Заполняйте их один раз либо повторяйте одинаковое значение по строкам. Агрегируйте их по уникальному <code>release_id</code>, не по строкам задач.</p>
+<p>Задачу с дефектом считайте один раз по уникальному <code>task_id</code>, если дефект подтвердили в 14-дневном окне. Для задачи с несколькими поставками укажите выпуск, в котором пользователь получил принятый результат. Сохраните одну строку задачи и один раз посчитайте ее стоимость. Для DORA возьмите полный список поставок и повторных развертываний из журнала CI или журнала выпусков, включая поставки без новых карточек.</p>
+<p><code>task_to_ready_hours</code> считает календарное время от принятия задачи до готовности к выпуску. <code>change_lead_time_hours</code> считает время от первого коммита до продуктивного выпуска. <code>ready_to_release_hours</code> показывает ожидание между этими точками. Для незапущенных или не выпущенных задач релизные длительности оставляйте пустыми.</p>
+<p>План проверок задавайте заранее. Для каждой задачи должно выполняться равенство <code>required_checks_planned = required_checks_passed + required_checks_failed + required_checks_skipped</code>. Доля успешных проверок равна <code>passed / planned</code>. Пропущенная проверка остается в знаменателе. Аналогично ведите план, успехи, сбои и пропуски тестов.</p>
+<p><code>ai_request_count</code> и <code>ai_request_minutes</code> показывают число и суммарное время запросов к ИИ. <code>ai_suggestions_reviewed</code> и <code>ai_suggestions_accepted_without_change</code> считают рассмотренные и принятые без смысловой правки предложения. <code>ai_review_rework_hours</code> содержит только труд на проверку и переделку вывода ИИ. Эти часы уже входят в <code>total_person_hours</code>.</p>
+<p>Для полной стоимости задачи умножьте <code>total_person_hours</code> на согласованную ставку и добавьте прямые расходы на ИИ. Для отдельной оценки затрат, вызванных применением ИИ, сложите прямые расходы с <code>ai_review_rework_hours × ai_labor_rate_rub</code>. Не прибавляйте эту оценку к полной стоимости труда второй раз.</p>
+<p>Демо показывает задачу с одной пропущенной обязательной проверкой. Ее нельзя выпускать. <code>release_id</code> отражает запланированный релиз, который не входит в DORA-метрики. <code>quality_guardrail_pass=no</code> фиксирует решение заблокировать выпуск, несмотря на успешные тесты.</p>
+<p>Поля <code>ai_tool</code>, <code>ai_tool_version</code> и <code>model_id</code> позволяют сравнить результат при конкретном инструменте и версии. Не подменяйте ими группу, назначенную задаче до начала работы.</p>
+
+    </article>
+  </main>
+  <footer class="site-footer"><a href="../index.html">К обзору</a><span>Источники указаны в тексте</span></footer>
+</body>
+</html>
