@@ -10,17 +10,16 @@
 <body class="chapter">
   <a class="skip-link" href="#main">К содержанию</a>
   <header class="site-header">
-    <a class="brand" href="../index.html#map">ИИ в разработке 1С</a>
-    <a class="home-link" href="../index.html#map">Карта исследования</a>
+    <a class="chapter-return-link" href="../journey.html#library" data-return-link>← К библиотеке материалов</a>
   </header>
   <main class="reader" id="main">
-    <nav class="chapter-trail" aria-label="Путь в исследовании"><ol><li><a href="../index.html#map">Этапы и платформы</a></li><li><a href="sdlc-research.html">Практики по этапам SDLC</a></li><li><span aria-current="page">Часть 1 из 2: Сквозной пример</span></li></ol></nav><nav class="topic-neighbors" aria-label="Другие главы темы"><span>В этой теме</span><a href="astra-platform.html"><span>Следующая глава</span>Astra Developer Platform и 1С</a></nav>
+    <div class="chapter-context"><p>Этапы и платформы</p></div>
     <article class="main-article">
 <h1 id="разработка-1с-с-ии-семь-этапов-и-проверяемый-результат">Разработка 1С с ИИ: семь этапов и проверяемый результат</h1>
-<nav class="part-navigation" aria-label="Части раздела"><ol>
-<li><a href="sdlc-research.html" aria-current="page">Сквозной пример</a></li>
-<li><a href="sdlc-research-02.html">Метрики с единицами и знаменателями</a></li>
-</ol></nav>
+<details class="part-navigation"><summary>Содержание главы · часть 1 из 2</summary><nav aria-label="Части главы"><ol>
+<li><a href="sdlc-research.html" data-stage-link aria-current="page">Сквозной пример</a></li>
+<li><a href="sdlc-research-02.html" data-stage-link>Метрики с единицами и знаменателями</a></li>
+</ol></nav></details>
 
 <p>SDLC описывает путь изменения от заявки до сопровождения. Команда может ввести одно правило для текущей очереди. В карточке каждой доработки указывают, кто принимает решение, какого поведения ждут от 1С и чем его проверили. Ниже предложен порядок для обычных задач команды.</p>
 <h2 id="сквозной-пример">Сквозной пример</h2>
@@ -83,9 +82,11 @@
 <p>Для логики без интерфейса можно применять <a href="https://bia-technologies.github.io/yaxunit/">YAxUnit</a>, открытый фреймворк тестов 1С. <a href="https://github.com/Pr-Mex/vanessa-automation">Vanessa Automation</a> поддерживает сценарное тестирование действий пользователя. Проверяйте совместимость версий; инструменты не утверждают правильность учета.</p>
 <p>До выпуска пройдите сценарии на тестовой базе, проверьте права, сохраните исходное состояние и опробуйте восстановление. В плане восстановления укажите, как сохранить документы, которые пользователи успеют ввести после обновления. Возврат предыдущего модуля сам по себе не отменит изменений данных. Для добавленных реквизитов/регистров укажите обратное действие и проверку записей.</p>
 <p>После выпуска проверьте штатный и отрицательный сценарии и журнал ошибок. При нарушении критерия ответственный останавливает выпуск, включает проверенный откат или обход и сообщает владельцу.</p>
-
+<p class="chapter-continue"><span>Дальше в этой главе</span><a href="sdlc-research-02.html" data-stage-link>Метрики с единицами и знаменателями →</a></p>
     </article>
+    <details class="topic-neighbors"><summary>Другие главы этой темы</summary><nav aria-label="Другие главы темы"><a href="astra-platform.html" data-stage-link><span>Следующая глава</span>Astra Developer Platform и 1С</a></nav></details>
   </main>
-  <footer class="site-footer"><a href="../index.html#map">К карте</a><span>Источники указаны в тексте</span></footer>
+  <footer class="site-footer"><a href="../journey.html#library" data-return-link>К библиотеке материалов</a><span>Источники указаны в тексте</span></footer>
+  <script src="../chapter-return.js" defer></script>
 </body>
 </html>

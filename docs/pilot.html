@@ -10,17 +10,16 @@
 <body class="chapter">
   <a class="skip-link" href="#main">К содержанию</a>
   <header class="site-header">
-    <a class="brand" href="../index.html#map">ИИ в разработке 1С</a>
-    <a class="home-link" href="../index.html#map">Карта исследования</a>
+    <a class="chapter-return-link" href="../journey.html#library" data-return-link>← К библиотеке материалов</a>
   </header>
   <main class="reader" id="main">
-    <nav class="chapter-trail" aria-label="Путь в исследовании"><ol><li><a href="../index.html#map">Карта</a></li><li><a href="../practice.html#workflow">Организация работы</a></li><li><a href="pilot.html">Процесс разработки</a></li><li><span aria-current="page">Часть 1 из 2: Работа по каждой задаче</span></li></ol></nav><nav class="topic-neighbors" aria-label="Другие главы темы"><span>В этой теме</span><a href="operating-model.html"><span>Предыдущая глава</span>Как устроена работа команды</a><a href="measurement.html"><span>Следующая глава</span>Измерение результата</a></nav>
+    <div class="chapter-context"><p>Организация работы</p></div>
     <article class="main-article">
 <h1 id="порядок-разработки-доработок-1с">Порядок разработки доработок 1С</h1>
-<nav class="part-navigation" aria-label="Части раздела"><ol>
-<li><a href="pilot.html" aria-current="page">Работа по каждой задаче</a></li>
-<li><a href="pilot-02.html">Учебный пример</a></li>
-</ol></nav>
+<details class="part-navigation"><summary>Содержание главы · часть 1 из 2</summary><nav aria-label="Части главы"><ol>
+<li><a href="pilot.html" data-stage-link aria-current="page">Работа по каждой задаче</a></li>
+<li><a href="pilot-02.html" data-stage-link>Учебный пример</a></li>
+</ol></nav></details>
 
 <p>Этот порядок применяйте к обычным задачам команды. Начните со следующей принятой к работе доработки из очереди. Запишите запрос, договоритесь о проверках и доведите изменение до выпуска. ИИ может помогать на отдельных шагах, если его применение разрешено для этих данных. Ответственность за изменение остается у команды.</p>
 <h2 id="работа-по-каждой-задаче">Работа по каждой задаче</h2>
@@ -92,9 +91,11 @@
 <p>Добавляйте автоматизацию в текущий рабочий поток последовательно: статический анализ BSL, модульные тесты, сборка, сценарные тесты и публикация отчета CI. В EDT есть поддержка Git. Для BSL доступны BSL Language Server, YAxUnit и Vanessa Automation. Перед выбором проверьте поддержку нужных версий платформы, конфигурации и лицензии. <a href="https://its.1c.ru/db/content/edtdoc/src/topics/t000054.html">Групповая разработка в EDT</a>, <a href="https://github.com/1c-syntax/bsl-language-server">BSL Language Server</a>, <a href="https://github.com/bia-technologies/yaxunit">YAxUnit</a>, <a href="https://github.com/Pr-Mex/vanessa-automation">Vanessa Automation</a>, <a href="https://github.com/vanessa-opensource/vanessa-runner">Vanessa Runner</a></p>
 <h2 id="как-связать-требования-тесты-и-роли">Как связать требования, тесты и роли</h2>
 <p>Для каждого критерия укажите пользователя и его фактическую роль, тест, ожидаемый результат и того, кто принимает результат. Один тест может покрывать несколько критериев. Технический тест сам по себе не подтверждает бизнес-приемку. Проверяйте права по реальной матрице доступа тестовой базы, а не по названию роли.</p>
-
+<p class="chapter-continue"><span>Дальше в этой главе</span><a href="pilot-02.html" data-stage-link>Учебный пример →</a></p>
     </article>
+    <details class="topic-neighbors"><summary>Другие главы этой темы</summary><nav aria-label="Другие главы темы"><a href="operating-model.html" data-stage-link><span>Предыдущая глава</span>Как устроена работа команды</a><a href="measurement.html" data-stage-link><span>Следующая глава</span>Измерение результата</a></nav></details>
   </main>
-  <footer class="site-footer"><a href="../index.html#map">К карте</a><span>Источники указаны в тексте</span></footer>
+  <footer class="site-footer"><a href="../journey.html#library" data-return-link>К библиотеке материалов</a><span>Источники указаны в тексте</span></footer>
+  <script src="../chapter-return.js" defer></script>
 </body>
 </html>

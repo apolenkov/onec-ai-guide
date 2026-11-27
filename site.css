@@ -641,106 +641,51 @@ body.chapter .reader {
   padding-bottom: 80px;
 }
 
-body.chapter .chapter-trail {
-  width: min(100%, var(--page-width));
-  margin: 0 auto;
-  padding: 15px 0 12px;
-  border-bottom: 1px solid var(--line);
-  color: var(--ink-soft);
-  font: 550 0.79rem/1.5 var(--ui);
-}
-
-body.chapter .chapter-trail ol {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 5px 9px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-body.chapter .chapter-trail li {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  min-width: 0;
-}
-
-body.chapter .chapter-trail li + li::before {
-  content: "/";
-  color: #829084;
-}
-
-body.chapter .chapter-trail a {
-  color: #315b49;
+body.chapter .chapter-return-link {
+  color: var(--white);
+  font: 650 0.9rem/1.35 var(--ui);
   text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  text-underline-offset: 4px;
 }
 
-body.chapter .chapter-trail [aria-current="page"] {
-  color: var(--ink);
-  font-weight: 700;
-}
-
-body.chapter .topic-neighbors {
-  width: min(100%, var(--page-width));
+body.chapter .chapter-return-link:hover { color: var(--lime); }
+body.chapter .chapter-context {
+  width: min(100%, var(--reading-width));
   margin: 0 auto;
-  padding: 11px 0 13px;
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 7px 16px;
-  color: #627268;
-  font: 500 0.75rem/1.45 var(--ui);
+  padding-top: 24px;
+  color: var(--ink-soft);
+  font: 600 0.8rem/1.4 var(--ui);
 }
-
-body.chapter .topic-neighbors a {
-  display: inline-flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 5px;
-  color: #315b49;
-  font-weight: 650;
-  text-decoration: none;
-}
-
-body.chapter .topic-neighbors a span {
-  color: #69786e;
-  font-size: 0.67rem;
-  font-weight: 500;
-}
-
-body.chapter .topic-neighbors a:hover {
-  color: var(--forest-deep);
-}
-
+body.chapter .chapter-context p { margin: 0; }
+body.chapter .chapter-context p::before { content: "Тема · "; color: #78877d; }
+body.chapter .topic-neighbors,
 body.chapter .part-navigation {
   margin: 1.1rem 0 1.8rem;
-  padding: 11px 14px;
+  padding: 10px 14px;
   border: 1px solid var(--line);
   background: #f0f1e9;
+  color: var(--ink-soft);
   font: 550 0.78rem/1.45 var(--ui);
 }
-
+body.chapter .topic-neighbors summary,
+body.chapter .part-navigation summary { cursor: pointer; color: var(--ink); font-weight: 650; }
+body.chapter .topic-neighbors nav { display: flex; flex-wrap: wrap; gap: 8px 18px; padding-top: 9px; }
+body.chapter .topic-neighbors a { color: #315b49; font-weight: 650; text-decoration: none; }
+body.chapter .topic-neighbors a span { display: block; color: #69786e; font-size: 0.67rem; font-weight: 500; }
+body.chapter .chapter-start { margin: 0 0 1rem; font: 550 0.78rem/1.4 var(--ui); }
+body.chapter .chapter-start a { color: #315b49; }
+body.chapter .chapter-continue { padding-top: 1rem; border-top: 1px solid var(--line); }
+body.chapter .chapter-continue span { display: block; color: var(--ink-soft); font: 550 .8rem/1.6 var(--ui); }
 body.chapter .part-navigation ol {
   display: flex;
   flex-wrap: wrap;
   gap: 7px 12px;
-  margin: 0;
+  margin: 8px 0 0;
   padding: 0;
   list-style: none;
 }
-
-body.chapter .part-navigation a {
-  display: inline-block;
-  padding: 3px 0;
-}
-
-body.chapter .part-navigation [aria-current="page"] {
-  color: var(--ink);
-  font-weight: 700;
-}
+body.chapter .part-navigation a { display: inline-block; padding: 3px 0; }
+body.chapter .part-navigation [aria-current="page"] { color: var(--ink); font-weight: 700; }
 
 body.chapter .main-article {
   max-width: var(--reading-width);
@@ -1008,7 +953,6 @@ body.chapter article a {
 
 @media print {
   .site-header,
-  .chapter-trail,
   .topic-neighbors,
   .site-footer,
   .button,
@@ -1020,16 +964,6 @@ body.chapter article a {
   .material-card {
     break-inside: avoid;
   }
-}
-
-.home-link {
-  color: #f0f2e7;
-  font: 600 0.82rem/1.35 var(--ui);
-  text-decoration: none;
-}
-
-.home-link:hover {
-  color: var(--lime);
 }
 
 /* Director landing page: clear actions and readable process details. */
