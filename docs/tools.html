@@ -15,13 +15,14 @@
   </header>
   <main class="reader" id="main">
     <nav class="article-nav" aria-label="Разделы исследования">
-      <a href="evidence.html">Разработка и бенчмарки</a>
+      <a href="decision.html">Выбор решения и процесса</a>
+        <a href="operating-model.html">Как устроена работа команды</a>
+        <a href="evidence.html">Разработка и бенчмарки</a>
         <a href="business-cases.html">Бизнес-процессы</a>
         <a href="tools.html" aria-current="page">Инструменты</a>
         <a href="pilot.html">Процесс разработки</a>
         <a href="measurement.html">Измерение результата</a>
         <a href="learning.html">Обучение</a>
-        <a href="herdr.html">Рабочее пространство Herdr</a>
         <a href="../templates/task.html">Карточка задачи</a>
     </nav>
     <article class="main-article">
@@ -31,64 +32,65 @@
 <li><a href="tools-02.html">IDE и статические проверки</a></li>
 </ol></nav>
 
-<p>Срез проверен 27 ноября 2026 года. Ссылки ведут на проекты авторов, документацию поставщиков и официальные страницы. Помета <code>описано</code> означает, что возможность заявлена в документации. Мы не устанавливали и не запускали инструменты в этом исследовании.</p>
+<p>Срез на 27 ноября 2026 года. Возможности описаны авторами и поставщиками. Инструменты в исследовании не устанавливали и не запускали.</p>
 <h2 id="как-выбирать">Как выбирать</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th>Если нужно</th>
-<th>С чего начать</th>
-<th>Что подтвердить перед пилотом</th>
+<th>Задача команды</th>
+<th>Инструмент и где взять</th>
+<th>Как проверить результат</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Помочь агенту использовать конкретный API БСП</td>
-<td>Skill по БСП</td>
-<td>Совпадает ли версия БСП с целевой конфигурацией, актуальны ли сигнатуры методов</td>
+<td>Уточнить требования и разбить работу</td>
+<td>Встроенные команды и навыки <a href="https://code.1c.ai/support/">1С:Напарника</a> в EDT, либо роли и навыки из <a href="https://github.com/comol/ai_rules_1c"><code>ai_rules_1c</code></a></td>
+<td>Заказчик подтверждает критерии приемки. Проверьте лицензию <code>ai_rules_1c</code> до копирования его файлов</td>
 </tr>
 <tr>
-<td>Ввести единый рабочий цикл и специализированные роли</td>
-<td><code>ai_rules_1c</code></td>
-<td>Лицензия, адаптер для выбранного агента, права каждой команды и возможности конкретной модели</td>
+<td>Исследовать метаданные и API платформы</td>
+<td><a href="https://code.1c.ai/support/">1С:Напарник</a> в EDT или <a href="https://github.com/Regsorm/bsl-context"><code>bsl-context</code> MCP</a></td>
+<td>Сверьте имя объекта, сигнатуру метода и версию платформы с метаданными и синтакс-помощником целевой базы</td>
 </tr>
 <tr>
-<td>Дать агенту достоверную справку по платформе</td>
-<td><code>bsl-context</code> MCP</td>
-<td>Совпадает ли установленная версия платформы с целевой, какой перечень MCP-инструментов включен</td>
+<td>Изменить код с учетом БСП</td>
+<td><a href="https://github.com/brake71/1c-ssl-skills/tree/v0.17/skills/bsp">Skill по БСП</a> для версии БСП 3.1.11; установщик для Codex, Claude Code и OpenCode опубликован в репозитории</td>
+<td>Сверьте сигнатуры с XML-выгрузкой используемой БСП, запустите анализ BSL и проверьте diff</td>
 </tr>
 <tr>
-<td>Получить BSL-диагностику и навигацию в редакторе</td>
-<td>BSL Language Server и интеграция для IDE</td>
-<td>Версия сервера, набор правил проекта, ограничения платформы и конфигурации</td>
+<td>Найти ошибки и навигацию в BSL</td>
+<td><a href="https://github.com/1c-syntax/bsl-language-server">BSL Language Server</a> и его расширение для <a href="https://github.com/1c-syntax/claude-code-bsl-lsp">Claude Code</a></td>
+<td>Запустите диагностику на измененных модулях и зафиксируйте версию сервера и настройки проекта</td>
 </tr>
 <tr>
-<td>Проверить готовность к выпуску</td>
-<td>BSL-диагностика, модульные и прикладные тесты</td>
-<td>Реально ли запускаются проверки в CI и на изолированной тестовой базе</td>
+<td>Проверить логику и пользовательский сценарий</td>
+<td><a href="https://github.com/bia-technologies/yaxunit">YAxUnit</a> для unit-тестов; <a href="https://github.com/Pr-Mex/vanessa-automation">Vanessa Automation</a> для функциональных сценариев</td>
+<td>Получите отчет тестов на целевой тестовой базе, сохраните данные, версии платформы и конфигурации</td>
 </tr>
 <tr>
-<td>Сравнить модели на задачах BSL</td>
-<td>PRISM</td>
-<td>Совпадают ли задачи бенчмарка с работой команды и доступны ли модели в ее контуре</td>
+<td>Выбрать модель для BSL-задач</td>
+<td><a href="https://prism.genlab-1c.ru/">PRISM</a> и его <a href="https://github.com/genlab-1c/prism">репозиторий</a></td>
+<td>Сопоставьте опубликованный набор с задачами команды, затем проверьте кандидатов на одинаковых обезличенных задачах</td>
 </tr>
 </tbody>
 </table></div>
-<p>Название категории само по себе не определяет безопасность. Лицензия отвечает на условия использования и распространения кода. Отдельно проверьте модель и условия ее провайдера, разрешения агента и MCP-инструментов, а также сетевой маршрут и передаваемые данные. В данном исследовании не проверялись корпоративные договоры, настройки доступа и сетевые маршруты.</p>
+<p>Лицензия определяет условия кода. Отдельно проверьте условия модели, права агента и MCP-инструментов, сетевой маршрут и передаваемые данные. Одна и та же инструкция может работать с разными моделями и правами, а название плагина не определяет маршрут данных. Корпоративные договоры и настройки доступа в исследовании не проверялись.</p>
 <h2 id="skills-и-набор-ролей">Skills и набор ролей</h2>
 <h3 id="1c-ssl-skills-узкий-навык-по-бсп"><code>1c-ssl-skills</code>: узкий навык по БСП</h3>
-<p>Это настоящий переносимый skill для ИИ-агентов. В <code>skills/bsp/SKILL.md</code> находится маршрутизатор, рядом 24 справочных файла, а <code>scripts/bsp_api.py</code> сверяет методы, области и диапазоны строк с XML-выгрузкой БСП. Автор указывает поддержку БСП 3.1.11. Есть установщики для Codex, Claude Code и OpenCode. Репозиторий распространяется по MIT. Если поставка использует другую версию БСП, содержание skill сначала нужно сверить с этой поставкой.</p>
-<p>Для воспроизводимой проверки выбран тег <code>v0.17</code> и соответствующий commit <code>579d8a49d1a125ce3cb424ede8032118d798d8f3</code>. GitHub API указывает дату commit 22 ноября 2026 года. Пример точного файла: <a href="https://github.com/brake71/1c-ssl-skills/blob/579d8a49d1a125ce3cb424ede8032118d798d8f3/skills/bsp/SKILL.md"><code>skills/bsp/SKILL.md</code> на v0.17</a>. Репозиторий открыт для чтения, релиз содержит установочные архивы. Установку и выполнение skill мы не проводили.</p>
+<p>Переносимый skill для Codex, Claude Code и OpenCode. Содержит <code>skills/bsp/SKILL.md</code>, 24 справки и <code>scripts/bsp_api.py</code> для сверки API с XML-выгрузкой БСП. Лицензия MIT. Автор указывает БСП 3.1.11, для другой версии сверяйте содержание с поставкой.</p>
+<p>Проверены тег <code>v0.17</code> и commit <code>579d8a49d1a125ce3cb424ede8032118d798d8f3</code> от 22 ноября 2026 года через GitHub API. Точный файл <a href="https://github.com/brake71/1c-ssl-skills/blob/579d8a49d1a125ce3cb424ede8032118d798d8f3/skills/bsp/SKILL.md"><code>skills/bsp/SKILL.md</code></a>. Установку и выполнение не проводили.</p>
 <p>Источник: <a href="https://github.com/brake71/1c-ssl-skills/tree/579d8a49d1a125ce3cb424ede8032118d798d8f3">README и состав</a>, <a href="https://github.com/brake71/1c-ssl-skills/blob/579d8a49d1a125ce3cb424ede8032118d798d8f3/LICENSE">лицензия MIT</a>.</p>
 <h3 id="airules1c-правила-команды-и-роли-для-разных-агентов"><code>ai_rules_1c</code>: правила, команды и роли для разных агентов</h3>
-<p>Это более широкий набор процессов и ролей, а не один skill. В commit <code>f4dbf88a4d77231bd310f11598515d4b7522ec70</code> есть роли <code>planner</code>, <code>architect</code>, <code>developer</code>, <code>tester</code>, <code>code-reviewer</code>, навыки для тестов и поиска кода, команды и адаптеры для нескольких инструментов. Например, точные файлы <a href="https://github.com/comol/ai_rules_1c/blob/f4dbf88a4d77231bd310f11598515d4b7522ec70/content/agents/planner.md"><code>content/agents/planner.md</code></a> и <a href="https://github.com/comol/ai_rules_1c/blob/f4dbf88a4d77231bd310f11598515d4b7522ec70/content/skills/1c-business-tests/SKILL.md"><code>content/skills/1c-business-tests/SKILL.md</code></a>. GitHub API указывает дату commit 26 ноября 2026 года.</p>
-<p>README описывает поддержку Claude Code, Codex, Cursor, OpenCode и других агентов. Эффект зависит от того, как выбранный клиент применяет правила и передает полномочия модели. GitHub API не распознал лицензию репозитория, корневой <code>LICENSE</code> не найден. Мы не устанавливали пакет и не проверяли команды на конкретном агенте. До выяснения лицензии ограничьтесь чтением и ссылками на оригинал.</p>
+<p>Набор процессов, команд и ролей <code>planner</code>, <code>architect</code>, <code>developer</code>, <code>tester</code>, <code>code-reviewer</code>, с навыками тестов и поиска кода. Commit <code>f4dbf88a4d77231bd310f11598515d4b7522ec70</code> от 26 ноября 2026 года, проверен через GitHub API. Примеры: <a href="https://github.com/comol/ai_rules_1c/blob/f4dbf88a4d77231bd310f11598515d4b7522ec70/content/agents/planner.md"><code>content/agents/planner.md</code></a>, <a href="https://github.com/comol/ai_rules_1c/blob/f4dbf88a4d77231bd310f11598515d4b7522ec70/content/skills/1c-business-tests/SKILL.md"><code>content/skills/1c-business-tests/SKILL.md</code></a>.</p>
+<p>README перечисляет Claude Code, Codex, Cursor, OpenCode, DeepSeek Harness, Kimi, Qwen и другие агенты. Инсталлятор переносит команды, адаптеры, правила и навыки в форматы клиента. Набор помогает задать планирование, разработку, тесты и ревью; фактическое применение зависит от клиента, выбранной модели и ее прав.</p>
+<p>GitHub API не распознал лицензию, корневой <code>LICENSE</code> не найден. Пакет и команды не запускали. До выяснения лицензии ссылайтесь на оригинал, не копируйте файлы.</p>
 <p>Источники: <a href="https://github.com/comol/ai_rules_1c/blob/f4dbf88a4d77231bd310f11598515d4b7522ec70/README.md"><code>README.md</code> на проверенном commit</a>, <a href="https://github.com/comol/ai_rules_1c/tree/f4dbf88a4d77231bd310f11598515d4b7522ec70/content/agents">каталог ролей</a>, <a href="https://github.com/comol/ai_rules_1c/tree/f4dbf88a4d77231bd310f11598515d4b7522ec70/content/skills">каталог навыков</a>.</p>
 <h2 id="mcp-с-контекстом-платформы">MCP с контекстом платформы</h2>
 <h3 id="bsl-context-локальная-справка-и-валидация-bsl"><code>bsl-context</code>: локальная справка и валидация BSL</h3>
-<p>MCP-сервер индексирует справочную информацию из <code>shcntx_ru.hbk</code> установленной платформы. Документация перечисляет поиск типов и методов, просмотр членов типа и перечислений, проверку вызова метода, проверку выражений и модулей BSL, а также поиск занятых имен. Для сервера нужны Rust и локальная установленная платформа. Файл справки в репозитории не поставляется. Версию платформы задают явно через <code>platform_path</code>, потому что набор методов и сигнатур зависит от релиза платформы.</p>
-<p>Сервер предлагает transport через stdio либо локальный Streamable HTTP. В описанном перечне инструментов доступны справочные и диагностические операции, нет исполнения BSL в информационной базе. Для первого пилота это дает контекст API без подключения к рабочим данным. Проверьте включенный whitelist и сетевой bind. Лицензия репозитория MIT.</p>
-<p>На дату среза GitHub API вернул commit <code>ae7e07759d6c1eec6a75b261daa0af67e9298202</code> от 27 ноября 2026 года. Проект не публикует релизной версии. Точный пример: <a href="https://github.com/Regsorm/bsl-context/blob/ae7e07759d6c1eec6a75b261daa0af67e9298202/README.md"><code>README.md</code> на commit</a>. Commit и дату проверили через GitHub API. Сервер не собирали и не подключали к IDE.</p>
+<p>MCP-сервер индексирует <code>shcntx_ru.hbk</code> установленной платформы. Он ищет типы и методы, показывает члены типов, конструкторы и значения перечислений, проверяет вызовы, выражения и целые модули BSL. Также находит зарезервированные имена. Требуются Rust и локальная платформа, справка в репозитории не поставляется. <code>platform_path</code> задают явно, поскольку API зависит от версии.</p>
+<p>Доступны stdio и локальный Streamable HTTP. Инструменты работают со справкой и диагностикой, без исполнения BSL в ИБ. Проверьте whitelist и сетевой bind. Лицензия MIT.</p>
+<p>Commit <code>ae7e07759d6c1eec6a75b261daa0af67e9298202</code> от 27 ноября проверен через GitHub API. Тегированной версии нет. Сервер не собирали и не подключали к IDE. См. <a href="https://github.com/Regsorm/bsl-context/blob/ae7e07759d6c1eec6a75b261daa0af67e9298202/README.md"><code>README.md</code> на commit</a>.</p>
 <p>Источники: <a href="https://github.com/Regsorm/bsl-context/tree/ae7e07759d6c1eec6a75b261daa0af67e9298202">README и перечень MCP-инструментов</a>, <a href="https://github.com/Regsorm/bsl-context/blob/ae7e07759d6c1eec6a75b261daa0af67e9298202/LICENSE">лицензия MIT</a>.</p>
 
     </article>
