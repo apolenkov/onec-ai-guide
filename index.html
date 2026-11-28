@@ -10,22 +10,75 @@
   <link rel="stylesheet" href="overview-figure.css">
 </head>
 <body>
+<a class="skip-link" href="#overview-title">К выводу исследования</a>
 <main class="overview">
   <header class="overview-header">
-    <a class="overview-brand" href="index.html"><span class="brand-mark" aria-hidden="true">1С</span><span>Исследование, 27 ноября 2026</span></a>
+    <a class="overview-brand" href="index.html"><span class="brand-mark" aria-hidden="true">1С</span><span>Исследование · 28 ноября 2026</span></a>
     <nav aria-label="Разделы исследования"><a href="#map">Процесс</a><a href="#tools">Инструменты</a><a href="#team">Организация</a></nav>
   </header>
 
   <section class="overview-hero" aria-labelledby="overview-title">
     <div class="hero-copy">
-      <h1 id="overview-title">Как применять ИИ в разработке 1С</h1>
-      <p class="hero-conclusion">ИИ помогает аналитику уточнить заявку и готовит черновик изменения с проверками. Разработчик проверяет код и тесты, а ответственный решает, что выпускать.</p>
+      <h1 id="overview-title"><span id="summary" aria-hidden="true"></span>ИИ помогает в 1С, когда команда договорилась о порядке работы</h1>
+      <p class="hero-conclusion">Изучите варианты, выберите инструменты и договоритесь, кто проверяет результат. Затем поручайте ИИ конкретные действия от заявки до выпуска.</p>
+      <p class="hero-limit">Открытых замеров мало, и они охватывают отдельные задачи. <a href="docs/evidence.html#основные-выводы">Что показали случаи</a></p>
       <div class="hero-actions">
-        <a class="hero-link" href="#map">Как заказ проходит 7 этапов <span aria-hidden="true">↓</span></a>
-        <a class="hero-director" href="docs/team-patterns.html?from=team">Результаты исследования для директора</a>
+        <a class="hero-link" href="journey.html#stages"><span id="atlas-title" data-bookmark="journey.html#atlas-title" aria-hidden="true"></span><span id="stages" data-bookmark="journey.html#stages" aria-hidden="true"></span><span id="stages-title" data-bookmark="journey.html#stages-title" aria-hidden="true"></span><span id="phase-understand" data-bookmark="journey.html#phase-understand" aria-hidden="true"></span><span id="phase-change" data-bookmark="journey.html#phase-change" aria-hidden="true"></span><span id="phase-release" data-bookmark="journey.html#phase-release" aria-hidden="true"></span><span id="reading-position" data-bookmark="journey.html#reading-position" aria-hidden="true"></span>Карта 7 этапов разработки</a>
+        <a class="hero-director" href="docs/decision.html">Сравнить варианты, включая работу без ИИ</a>
       </div>
     </div>
-    <div class="overview-figure-slot"><figure class="order-figure" aria-labelledby="order-figure-caption">
+  </section>
+
+  <aside class="case-strip" aria-label="Данные из самоотчета интегратора">
+    <div>
+      <p class="case-kicker">Самоотчет интегратора о 12 задачах</p>
+      <p class="case-times"><span><strong>23&nbsp;ч</strong> с ИИ</span><span><strong>156&nbsp;ч</strong> оценка ручной работы</span></p>
+    </div>
+    <p class="case-limit">В таблице 3 задачи в категории &quot;Разработка&quot;, включая инструкции для пользователей, 7 задач переноса данных, учета и закрытия месяца, 2 задачи анализа и настройки. Постановку и проверку авторы отдельно не учитывали. Ручное время оценили эксперты. Параллельного замера не проводили. <a href="https://cifp.ru/2026/10/13/ii-v-proektah-1s-uskorenie-v-6-8-raza-na-realnyh-zadachah/">Методика и таблица, 13.10.2026</a></p>
+  </aside>
+
+  <section class="overview-map" id="map" aria-labelledby="map-title">
+    <div class="map-heading"><div><h2 id="map-title">От заявки до сопровождения</h2></div><p class="sdlc-note">Жизненный цикл разработки (SDLC) охватывает путь от запроса на изменение до выпуска и поддержки.</p></div>
+    <div class="process-groups">
+      <section class="process-group" aria-labelledby="phase-task">
+        <h3 id="phase-task">Понять задачу</h3>
+        <ol>
+          <li><a href="journey.html#requirements"><span id="requirements" data-bookmark="journey.html#requirements" aria-hidden="true"></span><span>01</span><b>Требования</b></a></li>
+          <li><a href="journey.html#design"><span id="design" data-bookmark="journey.html#design" aria-hidden="true"></span><span>02</span><b>Проектирование</b></a></li>
+        </ol>
+        <p class="group-output"><span>На выходе</span>Заявка с критериями и планом работ</p>
+      </section>
+      <section class="process-group" aria-labelledby="phase-build">
+        <h3 id="phase-build">Изменить и проверить</h3>
+        <ol>
+          <li><a href="journey.html#code"><span id="code" data-bookmark="journey.html#code" aria-hidden="true"></span><span>03</span><b>Код</b></a></li>
+          <li><a href="journey.html#review"><span id="review" data-bookmark="journey.html#review" aria-hidden="true"></span><span>04</span><b>Ревью</b></a></li>
+          <li><a href="journey.html#tests"><span id="tests" data-bookmark="journey.html#tests" aria-hidden="true"></span><span>05</span><b>Тесты</b></a></li>
+        </ol>
+        <p class="group-output"><span>На выходе</span>Изменение с результатами проверок</p>
+      </section>
+      <section class="process-group" aria-labelledby="overview-release">
+        <h3 id="overview-release">Выпустить и отследить</h3>
+        <ol>
+          <li><a href="journey.html#delivery"><span id="delivery" data-bookmark="journey.html#delivery" aria-hidden="true"></span><span>06</span><b>Поставка</b></a></li>
+          <li><a href="journey.html#support"><span id="support" data-bookmark="journey.html#support" aria-hidden="true"></span><span>07</span><b>Сопровождение</b></a></li>
+        </ol>
+        <p class="group-output"><span>На выходе</span>Версия и обращения после выпуска</p>
+      </section>
+    </div>
+  </section>
+
+  <section class="overview-section overview-example" aria-labelledby="example-overview-title">
+    <div>
+      <h2 id="example-overview-title">Учебный пример заказа без адреса</h2>
+      <p>Заказчик решает, что должна сделать 1С. Команда проверяет его правило на тестовой базе.</p>
+      <nav class="example-links" aria-label="Шаги учебного примера">
+        <a href="practice.html#experience"><span id="main" data-bookmark="practice.html#main" aria-hidden="true"></span><span id="home" data-bookmark="practice.html#home" aria-hidden="true"></span><span id="page-title" data-bookmark="practice.html#page-title" aria-hidden="true"></span><span id="guide-steps" data-bookmark="practice.html#guide-steps" aria-hidden="true"></span><span id="experience" data-bookmark="practice.html#experience" aria-hidden="true"></span><span id="experience-title" data-bookmark="practice.html#experience-title" aria-hidden="true"></span><span id="cases" data-bookmark="practice.html#cases" aria-hidden="true"></span><span id="cases-title" data-bookmark="practice.html#cases-title" aria-hidden="true"></span><span id="order-demo-title" data-bookmark="practice.html#order-demo-title" aria-hidden="true"></span><span id="practice-title" data-bookmark="practice.html#page-title" aria-hidden="true"></span>Попробовать интерактивный пример</a>
+        <a href="practice.html#choice"><span id="choice" data-bookmark="practice.html#choice" aria-hidden="true"></span><span id="recommendation" data-bookmark="practice.html#recommendation" aria-hidden="true"></span><span id="recommendation-title" data-bookmark="practice.html#recommendation-title" aria-hidden="true"></span><span id="choice-title" data-bookmark="practice.html#choice-title" aria-hidden="true"></span>Выбрать инструмент на примере</a>
+        <a href="practice.html#workflow"><span id="workflow" data-bookmark="practice.html#workflow" aria-hidden="true"></span><span id="process" data-bookmark="practice.html#process" aria-hidden="true"></span><span id="process-title" data-bookmark="practice.html#process-title" aria-hidden="true"></span><span id="example" data-bookmark="practice.html#example" aria-hidden="true"></span><span id="example-title" data-bookmark="practice.html#example-title" aria-hidden="true"></span><span id="workflow-title" data-bookmark="practice.html#workflow-title" aria-hidden="true"></span>Посмотреть порядок работы на примере</a>
+      </nav>
+    </div>
+    <figure class="order-figure" aria-labelledby="order-figure-caption">
   <div class="order-figure-doc" aria-label="Заказ покупателя без адреса доставки">
     <span class="order-figure-doc-title">Заказ покупателя</span>
     <span class="order-figure-field"><span>Адрес доставки</span><strong>не указан</strong></span>
@@ -37,70 +90,35 @@
   </div>
   <p class="order-figure-link"><span class="order-figure-arrow" aria-hidden="true"></span>Ответственный оценивает правило</p>
   <div class="order-figure-decision"><span>Решение специалиста</span><strong>проводить можно</strong></div>
-  <p class="order-figure-link"><span class="order-figure-arrow" aria-hidden="true"></span>Тест проверяет оба результата</p>
+  <p class="order-figure-link"><span class="order-figure-arrow" aria-hidden="true"></span>Тест проверяет порядок действий</p>
   <div class="order-figure-result" aria-label="Результаты проверки на тестовой базе">
     <span>Предупреждение появилось</span>
+    <span>Менеджер подтвердил проведение</span>
     <span>Заказ проведен</span>
   </div>
-  <figcaption id="order-figure-caption">Учебный пример: тест подтверждает, что предупреждение появляется, а заказ проводится.</figcaption>
-</figure></div>
+  <figcaption id="order-figure-caption">Один из трех случаев приемки: проведение заказа без адреса.</figcaption>
+</figure>
   </section>
-
-  <section class="overview-map" id="map" aria-labelledby="map-title">
-    <div class="map-heading"><div><h2 id="map-title">Как устроен SDLC в 1С</h2></div><p class="sdlc-note">Жизненный цикл разработки ведет от заявки до выпуска обновления и его поддержки.</p></div>
-    <div class="process-groups">
-      <section class="process-group" aria-labelledby="phase-task">
-        <h3 id="phase-task">Понять задачу</h3>
-        <ol>
-          <li><a href="journey.html#requirements"><span>01</span><b>Требования</b></a></li>
-          <li><a href="journey.html#design"><span>02</span><b>Проектирование</b></a></li>
-        </ol>
-        <p class="group-output"><span>На выходе</span>Заявка с критериями и планом работ</p>
-      </section>
-      <section class="process-group" aria-labelledby="phase-build">
-        <h3 id="phase-build">Изменить и проверить</h3>
-        <ol>
-          <li><a href="journey.html#code"><span>03</span><b>Код</b></a></li>
-          <li><a href="journey.html#review"><span>04</span><b>Ревью</b></a></li>
-          <li><a href="journey.html#tests"><span>05</span><b>Тесты</b></a></li>
-        </ol>
-        <p class="group-output"><span>На выходе</span>Изменение с результатами проверок</p>
-      </section>
-      <section class="process-group" aria-labelledby="overview-release">
-        <h3 id="overview-release">Выпустить и отследить</h3>
-        <ol>
-          <li><a href="journey.html#delivery"><span>06</span><b>Поставка</b></a></li>
-          <li><a href="journey.html#support"><span>07</span><b>Сопровождение</b></a></li>
-        </ol>
-        <p class="group-output"><span>На выходе</span>Версия и обращения после выпуска</p>
-      </section>
-    </div>
-  </section>
-
-  <aside class="case-strip" aria-label="Практический пример">
-    <p class="case-kicker">12 рабочих задач в 1С:ERP и КА2</p>
-    <p><strong>23 ч</strong> фактически с ИИ <span class="case-separator" aria-hidden="true"></span> <strong>156 ч</strong> экспертная оценка вручную</p>
-    <p class="case-limit">Постановку и проверку отдельно не учитывали. Полный срок от заявки до приемки по этим цифрам оценить нельзя. <a href="#sources">Методика и источник</a></p>
-  </aside>
 
   <section class="overview-section" id="tools" aria-labelledby="tools-title">
   <h2 id="tools-title">Инструменты по задаче</h2>
   <div class="tool-list">
     <article class="tool-row">
       <h3>Разобрать задачу и написать код</h3>
-      <p><strong>1С:Напарник</strong> помогает разработчику найти нужный модуль и подготовить код в EDT. Если команда работает в Конфигураторе, начать можно с вопросов к заявке в разрешенном помощнике.</p>
+      <p><strong>1С:Напарник</strong> помогает разработчику найти нужный модуль и подготовить код в 1С:EDT, среде разработки 1С. Если команда работает в Конфигураторе, начать можно с вопросов к заявке в разрешенном помощнике.</p>
     </article>
     <article class="tool-row">
       <h3>Проверить код</h3>
-      <p><strong>BSL Language Server</strong> находит замечания в измененных модулях. Разработчик исправляет их, а коллега проверяет, соответствует ли код задаче.</p>
+      <p><strong>BSL Language Server</strong> находит замечания в модулях на BSL, языке программирования 1С. Разработчик исправляет их, а коллега проверяет, соответствует ли код задаче.</p>
     </article>
     <article class="tool-row">
       <h3>Проверить поведение в 1С</h3>
-      <p><strong>YAxUnit</strong> проверяет отдельные расчеты и условия. <strong>Vanessa Automation</strong> воспроизводит действия пользователя. Например, проводит заказ и проверяет, появилось ли предупреждение.</p>
+      <p><strong>YAxUnit</strong> проверяет отдельные расчеты и условия. <strong>Vanessa Automation</strong> запускает сценарии проверки 1С. Например, можно проверить, появилось ли предупреждение при проведении заказа.</p>
     </article>
     <article class="tool-row">
       <h3>Хранить версии и выпускать</h3>
-      <p><strong>GitFlic</strong> хранит исходники в Git и запускает проверки. <strong>Astra Developer Platform</strong> объединяет инструменты поставки. Готовую цепочку сборки и тестирования 1С в открытой документации ADP подтвердить не удалось.</p>
+      <p><strong>GitFlic</strong> хранит историю исходного кода в Git и запускает автоматические проверки.
+      <strong>Astra Developer Platform</strong> включена в прайс-лист 1С Дистрибьюции с 23 ноября 2026 года. В опубликованном перечне шаблон для 1С не указан. <a href="https://dist.1c.ru/news/obnovlyen-prays-list-na-produkty-astra-linux-ot-gruppy-astra23/">1С Дистрибьюция, 25.11.2026</a>. <a href="docs/astra-platform.html?from=overview">Глава о платформе</a>.</p>
     </article>
   </div>
 </section>
@@ -109,30 +127,32 @@
   <h2 id="team-title">Как организовать работу команды</h2>
   <ol class="team-steps">
     <li><h3>Согласуйте результат</h3><p>Аналитик записывает в карточке одну просьбу и примеры приемки. Для заказа с пустым адресом заказчик уточняет, нужно ли остановить проведение или достаточно предупредить менеджера.</p></li>
-    <li><h3>Назначьте проверяющего</h3><p>Разработчик связывает задачу с версией в хранилище 1С или Git. Коллега смотрит изменение. Тестировщик воспроизводит примеры на тестовой базе и сохраняет результат.</p></li>
+    <li><h3>Назначьте проверяющего</h3><p>Разработчик связывает задачу с версией в хранилище 1С (общей истории изменений конфигурации) или Git. Коллега смотрит изменение. Тестировщик воспроизводит примеры на тестовой базе и сохраняет результат.</p></li>
     <li><h3>Замкните цикл после выпуска</h3><p>Ответственный указывает выпущенную версию и как восстановиться при сбое. Поддержка связывает обращения с этой версией. Руководитель видит срок до приемки и сколько задач вернулось на исправление.</p></li>
   </ol>
   <p><a href="docs/team-patterns.html?from=team">Как вести задачу в хранилище 1С или Git и проверить результат</a></p>
 </section>
 
-<details id="sources" class="reading-sources">
-  <summary>Источники и все материалы</summary>
+<section id="sources" class="overview-section reading-sources" aria-labelledby="sources-title">
+  <h2 id="sources-title">Источники и материалы</h2>
   <ul>
     <li><a href="https://cifp.ru/2026/10/13/ii-v-proektah-1s-uskorenie-v-6-8-raza-na-realnyh-zadachah/">Опубликованная таблица 12 задач 1С</a>. Авторы объясняют, как оценили ручную работу и замерили время с ИИ.</li>
     <li><a href="https://code.1c.ai/support/">Официальное руководство 1С:Напарника</a>.</li>
     <li><a href="https://github.com/1c-syntax/bsl-language-server">BSL Language Server</a>.</li>
     <li><a href="https://bia-technologies.github.io/yaxunit/">YAxUnit</a> и <a href="https://github.com/Pr-Mex/vanessa-automation">Vanessa Automation</a>.</li>
-    <li><a href="https://docs.gitflic.ru/latest/cicd/pipeline/">GitFlic CI/CD</a> и <a href="docs/astra-platform.html?from=overview">Astra Dev Platform: подтвержденные возможности и ограничения для 1С</a>.</li>
+    <li><a href="https://docs.gitflic.ru/latest/cicd/pipeline/">GitFlic CI/CD</a>.</li>
     <li><a href="docs/sdlc-research.html?from=overview">Исследование семи этапов, роли, метрики, данные и откат</a>.</li>
     <li><a href="docs/tools.html?from=overview">Каталог инструментов, навыков и плагинов для 1С</a>.</li>
-    <li><a href="journey.html#library">Все материалы исследования</a>.</li>
   </ul>
-</details>
+</section>
 
-<nav class="more-reading" aria-label="Продолжить">
-  <a href="journey.html#requirements">Пройти пример заказа по шагам</a>
+<nav class="more-reading" aria-label="Материалы исследования">
+  <a href="journey.html#library"><span id="library" data-bookmark="journey.html#library" aria-hidden="true"></span><span id="library-title" data-bookmark="journey.html#library-title" aria-hidden="true"></span>Все материалы исследования</a>
+  <a href="docs/evidence.html#основные-выводы">Результаты исследования для директора: кейсы и замеры</a>
+  <a href="docs/pilot.html"><span id="pilot" data-bookmark="docs/pilot.html" aria-hidden="true"></span>Порядок работы с обычной очередью</a>
   <a href="training/briefing.html">Презентация</a>
+  <a href="practice.html#downloads"><span id="downloads" data-bookmark="practice.html#downloads" aria-hidden="true"></span><span id="downloads-title" data-bookmark="practice.html#downloads-title" aria-hidden="true"></span><span id="materials" data-bookmark="practice.html#materials" aria-hidden="true"></span><span id="materials-title" data-bookmark="practice.html#materials-title" aria-hidden="true"></span><span id="files" data-bookmark="practice.html#files" aria-hidden="true"></span><span id="decision-files-title" data-bookmark="practice.html#decision-files-title" aria-hidden="true"></span><span id="process-files-title" data-bookmark="practice.html#process-files-title" aria-hidden="true"></span><span id="slides-title" data-bookmark="practice.html#slides-title" aria-hidden="true"></span>Материалы для скачивания</a>
 </nav>
 </main>
-<a class="old-route" id="atlas-title" href="journey.html#atlas-title">Открыть раздел</a><a class="old-route" id="stages" href="journey.html#stages">Открыть раздел</a><a class="old-route" id="stages-title" href="journey.html#stages-title">Открыть раздел</a><a class="old-route" id="phase-understand" href="journey.html#phase-understand">Открыть раздел</a><a class="old-route" id="phase-change" href="journey.html#phase-change">Открыть раздел</a><a class="old-route" id="phase-release" href="journey.html#phase-release">Открыть раздел</a><a class="old-route" id="reading-position" href="journey.html#reading-position">Открыть раздел</a><a class="old-route" id="requirements" href="journey.html#requirements">Открыть раздел</a><a class="old-route" id="design" href="journey.html#design">Открыть раздел</a><a class="old-route" id="code" href="journey.html#code">Открыть раздел</a><a class="old-route" id="review" href="journey.html#review">Открыть раздел</a><a class="old-route" id="tests" href="journey.html#tests">Открыть раздел</a><a class="old-route" id="delivery" href="journey.html#delivery">Открыть раздел</a><a class="old-route" id="support" href="journey.html#support">Открыть раздел</a><a class="old-route" id="library" href="journey.html#library">Открыть раздел</a><a class="old-route" id="library-title" href="journey.html#library-title">Открыть раздел</a><a class="old-route" id="main" href="practice.html#main">Открыть раздел</a><a class="old-route" id="home" href="practice.html#home">Открыть раздел</a><a class="old-route" id="page-title" href="practice.html#page-title">Открыть раздел</a><a class="old-route" id="guide-steps" href="practice.html#guide-steps">Открыть раздел</a><a class="old-route" id="experience" href="practice.html#experience">Открыть раздел</a><a class="old-route" id="experience-title" href="practice.html#experience-title">Открыть раздел</a><a class="old-route" id="cases" href="practice.html#cases">Открыть раздел</a><a class="old-route" id="cases-title" href="practice.html#cases-title">Открыть раздел</a><a class="old-route" id="order-demo-title" href="practice.html#order-demo-title">Открыть раздел</a><a class="old-route" id="choice" href="practice.html#choice">Открыть раздел</a><a class="old-route" id="recommendation" href="practice.html#recommendation">Открыть раздел</a><a class="old-route" id="recommendation-title" href="practice.html#recommendation-title">Открыть раздел</a><a class="old-route" id="choice-title" href="practice.html#choice-title">Открыть раздел</a><a class="old-route" id="workflow" href="practice.html#workflow">Открыть раздел</a><a class="old-route" id="process" href="practice.html#process">Открыть раздел</a><a class="old-route" id="process-title" href="practice.html#process-title">Открыть раздел</a><a class="old-route" id="example" href="practice.html#example">Открыть раздел</a><a class="old-route" id="example-title" href="practice.html#example-title">Открыть раздел</a><a class="old-route" id="workflow-title" href="practice.html#workflow-title">Открыть раздел</a><a class="old-route" id="downloads" href="practice.html#downloads">Открыть раздел</a><a class="old-route" id="downloads-title" href="practice.html#downloads-title">Открыть раздел</a><a class="old-route" id="materials" href="practice.html#materials">Открыть раздел</a><a class="old-route" id="materials-title" href="practice.html#materials-title">Открыть раздел</a><a class="old-route" id="files" href="practice.html#files">Открыть раздел</a><a class="old-route" id="decision-files-title" href="practice.html#decision-files-title">Открыть раздел</a><a class="old-route" id="process-files-title" href="practice.html#process-files-title">Открыть раздел</a><a class="old-route" id="slides-title" href="practice.html#slides-title">Открыть раздел</a><script src="legacy.js" defer></script></body>
+<script src="legacy.js" defer></script></body>
 </html>
