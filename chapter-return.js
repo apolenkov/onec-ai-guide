@@ -18,7 +18,7 @@ if (fromStage || fromOverview) {
   for (const link of document.querySelectorAll("[data-return-link]")) {
     if (fromStage) {
       link.hash = stage;
-      link.textContent = `← К этапу «${stageTitles.get(stage)}»`;
+      link.textContent = `← К этапу "${stageTitles.get(stage)}"`;
     } else {
       const team = from === "team";
       link.href = new URL(team ? "index.html#team" : "index.html#sources", link.href).href;

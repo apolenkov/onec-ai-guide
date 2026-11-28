@@ -1,21 +1,98 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI по этапам SDLC для 1С</title><link rel="stylesheet" href="briefing.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#173b30" />
+  <title>Как применять ИИ в разработке 1С</title>
+  <link rel="stylesheet" href="briefing.css" />
 </head>
 <body>
-<main class="deck" aria-label="Презентация">
-<section class="slide active"><header><span>AI / SDLC / 1С</span><span>01 / 07</span></header><div class="hero">ИССЛЕДОВАНИЕ ВОЗМОЖНОСТЕЙ</div><h1>Где AI помогает<br>на этапах SDLC 1С?</h1><p class="lede">Сопоставить публично описанные случаи, процессные возможности и метрики. На каждой стадии видны роль человека и способ проверить результат.</p><div class="bottom"><span>МАТЕРИАЛ ДЛЯ ОБСУЖДЕНИЯ / 27.11.2026</span><span class="huge">1С</span></div><footer><span>Фокус: требования → архитектура → код → проверки → выпуск</span><span>НАЧАЛО · ВЕРСИЯ 2026-11-27.2</span></footer></section>
-<section class="slide"><header><span>КАРТА SDLC</span><span>02 / 07</span></header><h2>Проверять пользу AI отдельно на каждом этапе.</h2><div class="flow"><article><b>1 / ТРЕБОВАНИЯ</b><p>Суммировать вводные, задавать вопросы, находить неоднозначности и крайние случаи.</p></article><article><b>2 / АРХИТЕКТУРА</b><p>Предлагать варианты объектов метаданных и объяснения; решение и соответствие стандартам проверяет специалист.</p></article><article><b>3 / ПЛАН И КОД</b><p>Декомпозировать работу, подготовить BSL и тестовые заготовки, анализировать изменения.</p></article><article><b>4 / ПРОВЕРКИ</b><p>Помогать с тестами, ревью и поиском дефектов; фактический запуск и приемка остаются за людьми.</p></article><article><b>5 / ВЫПУСК И СОПРОВОЖДЕНИЕ</b><p>Оформить изменение, выпустить по процессу команды, после выпуска отслеживать ошибки и обратную связь.</p></article></div><div class="callout">Гипотезы возможностей, не обещание автоматизации. Эффект требует измерений на одинаковых по типу задачах.</div><footer><span>Ориентир SDLC: <a href="https://astra.ru/local/ajax/download/docs/12/49201/">техархитектура Astra Dev Platform</a> — общий DevOps-контекст</span><span>ЭТАПЫ · ВЕРСИЯ 2026-11-27.2</span></footer></section>
-<section class="slide"><header><span>СРАВНЕНИЕ ПУБЛИЧНЫХ СЛУЧАЕВ</span><span>03 / 07</span></header><h2>Публичные цифры описывают разные вещи.</h2><div class="evidence"><article><div class="metric">4 ч</div><div><h3>DNS / новый документ 1С</h3><p>Автор сообщил о примерно четырёх часах работы и оценил срок без агентов минимум в два дня. В публикации описаны требования, архитектурный выбор, спецификация, план, задачи, код и проверки. Сравнение — оценка автора одного случая, без контрольной группы.</p><a href="https://infostart.ru/journal/news/mir-1s/kak-s-pomoshchyu-ii-agentov-sozdali-novyy-dokument-v-1s-za-chetyre-chasa-vmesto-dvukh-dney_2826336/">Публикация DNS / Infostart, 23.10.2026 ↗</a></div></article><article><div class="metric">120</div><div><h3>Магнит / 1С:Напарник</h3><p>По словам директора по цифровым технологиям, подключено 120 сотрудников; инструмент используют на этапах от требований до включения решения в корпоративный контур. Сообщается о приросте производительности без численной оценки. Это масштаб применения и качественная оценка, не замер экономии времени.</p><a href="https://www.retail.ru/articles/chto-pomogaet-it-direktoram-v-riteyle-ne-snizhat-tempy-avtomatizatsii-pri-szhimayushchikhsya-byudzhe/">Retail.ru, 08.06.2026 ↗</a></div></article></div><div class="callout">DNS: время и объём одной задачи. Магнит: охват сотрудников и общий эффект без числа. Метрики не сопоставимы напрямую.</div><footer><span>Публичные заявления компаний; контролируемого сравнительного исследования нет</span><span>СЛУЧАИ · ВЕРСИЯ 2026-11-27.2</span></footer></section>
-<section class="slide"><header><span>МЕТРИКИ ПО ЭТАПАМ</span><span>04 / 07</span></header><h2>Сравнивать время вместе с качеством результата.</h2><div class="tools"><article><b>ТРЕБОВАНИЯ И АРХИТЕКТУРА</b><p>Активные минуты до согласованной спецификации; число найденных и поздно обнаруженных неоднозначностей; доля решений, изменённых после экспертной проверки.</p></article><article><b>ПЛАНИРОВАНИЕ И КОД</b><p>Активное время до принятого изменения; объём переделок; доля предложенного кода, принятого после ревью; дефекты на изменение.</p></article><article><b>ТЕСТЫ И ПРИЁМКА</b><p>Покрытие согласованных сценариев; найденные дефекты до и после выпуска; время проверки; успешность регрессии.</p></article><article><b>ВЫПУСК И ЭКСПЛУАТАЦИЯ</b><p>Время от готовности до выпуска; ошибки после выпуска; откаты и инциденты; полнота описания и трассируемость изменения.</p></article></div><div class="callout">Для каждого показателя фиксировать исходный уровень, тип и сложность задачи, AI-инструмент, ручную проверку и качество. Чужие цифры не являются базовой линией.</div><footer><span>Метрики — предложения для оценки доказательств, фактических результатов команды здесь нет</span><span>МЕТРИКИ · ВЕРСИЯ 2026-11-27.2</span></footer></section>
-<section class="slide"><header><span>ТЕХНИЧЕСКИЙ КОНТЕКСТ</span><span>05 / 07</span></header><h2>Интеграция AI зависит от контура разработки.</h2><div class="example"><div><b>ASTRA DEV PLATFORM</b><p>Публичная техническая архитектура (2025) описывает жизненный цикл кода, CI/CD, реестр, доступ и эксплуатационный мониторинг на базе GitFlic и «Боцман».</p><p>Это архитектурный источник платформенного уровня, не описание AI-функций или конкретного контура 1С.</p><a href="https://astra.ru/local/ajax/download/docs/12/49201/">Техническая архитектура ADP ↗</a></div><div><b>GITFLIC: ИИ-АГЕНТЫ</b><p>Документация описывает генерацию патча и его применение в запросе на слияние с просмотром результата. Это пример размещения AI в потоке изменений и ревью.</p><p>Документация не подтверждает совместимость с конкретной конфигурацией 1С, качество патча или выигрыш в производительности.</p><a href="https://docs.gitflic.ru/latest/cicd/patch/">Использование ИИ-агентов в GitFlic ↗</a></div></div><div class="callout">Сопоставление источников показывает варианты архитектуры и точку контроля; производственный эффект не измерен.</div><footer><span>ADP — PDF 2025; GitFlic — публичная документация</span><span>КОНТУР · ВЕРСИЯ 2026-11-27.2</span></footer></section>
-<section class="slide"><header><span>ЧТО СПЕЦИФИЧНО ДЛЯ 1С</span><span>06 / 07</span></header><h2>Сгенерированный BSL — только часть изменения.</h2><div class="roles"><article><b>КОНФИГУРАЦИЯ И МЕТАДАННЫЕ</b><p>Проверить состав объектов, формы, реквизиты и соответствие архитектуре конфигурации.</p></article><article><b>ПОВЕДЕНИЕ И ДАННЫЕ</b><p>Проверить проведение, движения, права ролей, блокировки и соседние процессы на тестовой копии.</p></article><article><b>ВЕРСИОНИРОВАНИЕ</b><p>Сопоставить изменения с принятой версией конфигурации и проследить путь от задачи до релиза.</p></article><article><b>НЕЗАВИСИМАЯ ПРОВЕРКА</b><p>Синтаксис, сценарии и регрессию подтверждать подходящими инструментами и ответственным специалистом.</p></article><article><b>ОГРАНИЧЕНИЯ ДАННЫХ</b><p>До выбора модели установить разрешённость передачи кода, метаданных и тестовых данных, а также правила хранения.</p></article><article class="guard"><b>ЧЕЛОВЕК ОТВЕЧАЕТ</b><p>За требования, архитектуру, приемку и решение о выпуске.</p></article></div><footer><span>Пример DNS также оставил две проверки человеку: синтаксис и сценарии безопасности</span><span>КОНТРОЛИ · ВЕРСИЯ 2026-11-27.2</span></footer></section>
-<section class="slide"><header><span>ВОПРОСЫ ДЛЯ РУКОВОДИТЕЛЯ</span><span>07 / 07</span></header><h2>Какие данные нужны для обоснованного вывода?</h2><div class="last"><div><b>О ПРОЦЕССЕ И РЕЗУЛЬТАТАХ</b><ul><li>Какие этапы SDLC занимают больше всего времени?</li><li>Есть ли сопоставимые данные о сроках, переделках, дефектах и инцидентах?</li><li>Как фиксируются сложность задачи, критерии приемки и качество после выпуска?</li></ul></div><div><b>О ТЕХНОЛОГИИ И ОГРАНИЧЕНИЯХ</b><ul><li>Используются Конфигуратор, EDT, Git или CI/CD? Какие проверки автоматизированы?</li><li>Какие модели и способы обработки кода разрешены?</li><li>Где нужны доказательства: анализ требований, генерация кода, тесты, ревью или выпуск?</li></ul></div></div><div class="callout">Решение обосновано, когда эффект по этапам отделён от самооценки, качество проверено, а архитектурные ограничения подтверждены источниками и владельцами процесса.</div><footer><span>Источники: публичный кейс DNS; архитектура ADP; документация GitFlic</span><span>ВЫВОД · ВЕРСИЯ 2026-11-27.2</span></footer></section>
+<header class="deck-header">
+  <a href="../index.html">К обзору исследования</a>
+  <nav aria-label="Скачать презентацию"><a href="briefing.pdf">PDF</a><a href="briefing.pptx">PowerPoint</a></nav>
+</header>
+<main class="deck" aria-label="Презентация для директора по разработке 1С">
+  <section class="slide opening" aria-labelledby="slide-1">
+    <h1 id="slide-1">ИИ помогает в 1С, когда команда договорилась о порядке работы</h1>
+    <p class="lead">Сначала изучите варианты и выберите инструменты и процесс. Затем поручайте ИИ конкретные действия от заявки до выпуска.</p>
+    <p>Заказчик утверждает правило. Специалисты проверяют код и поведение 1С. Ответственный решает, что выпускать.</p>
+    <p class="note">Обзор открытых материалов · 28 ноября 2026</p>
+  </section>
+
+  <section class="slide" aria-labelledby="slide-2">
+    <h2 id="slide-2">Открытые данные описывают отдельные задачи</h2>
+    <ul class="points">
+      <li><strong>12 задач интегратора.</strong> Около 23 ч с ИИ и 156 ч по оценке ручной работы. В таблице 3 задачи в категории &quot;Разработка&quot;, включая инструкции для пользователей, 7 задач переноса данных, учета и закрытия месяца, 2 задачи анализа и настройки. Постановку и проверку отдельно не учитывали. Ручное время оценили эксперты. Параллельного замера не проводили. <a href="https://cifp.ru/2026/10/13/ii-v-proektah-1s-uskorenie-v-6-8-raza-na-realnyh-zadachah/">Самоотчет, 13.10.2026</a>.</li>
+      <li><strong>&quot;Магнит&quot; и 1С:Напарник.</strong> Начали с 5 человек, в пилоте было 52, затем подключили еще 29. На опрос ответили 44 человека: в среднем 2 часа экономии в неделю, 13 указали 0 часов. <a href="https://filerepository.1c.ru/download-file/12_20_1%D0%A1%20%D0%9D%D0%B0%D0%BF%D0%B0%D1%80%D0%BD%D0%B8%D0%BA%20-%20%D0%BE%D0%BF%D1%8B%D1%82%20%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%BE%D0%B3%D0%BE%20%D0%BF%D0%B8%D0%BB%D0%BE%D1%82%D0%B0%20%D0%B2%20Magnit%20Tech.pdf?fileUuid=7a7b2236-b07f-4e19-99c4-bb9bf2d2fae4">Доклад Magnit Tech, PDF, слайды доклада 2 и 16</a>. Позднее главный директор &quot;Магнита&quot; по цифровым технологиям сообщил о 120 подключенных сотрудниках. <a href="https://www.retail.ru/articles/chto-pomogaet-it-direktoram-v-riteyle-ne-snizhat-tempy-avtomatizatsii-pri-szhimayushchikhsya-byudzhe/">Retail.ru, 08.06.2026</a>.</li>
+    </ul>
+    <p class="note">Для решения о внедрении сравните время и качество на сопоставимых задачах своей команды.</p>
+  </section>
+
+  <section class="slide" aria-labelledby="slide-3">
+    <h2 id="slide-3">Команда согласует правило до правки кода</h2>
+    <p>Жизненный цикл разработки (SDLC) охватывает путь от заявки до сопровождения.</p>
+    <table aria-label="Этапы от требований до кода">
+      <thead><tr><th scope="col">Этап</th><th scope="col">Что делает ИИ</th><th scope="col">Что решает человек</th><th scope="col">Инструмент</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">1. Требования</th><td>Предлагает вопросы и примеры.</td><td>Заказчик задает правило и принимает примеры.</td><td>Разрешенный помощник для текста.</td></tr>
+        <tr><th scope="row">2. Проектирование</th><td>Ищет место для проверки адреса.</td><td>Разработчик выбирает, где менять программу.</td><td><a href="https://code.1c.ai/support/">1С:Напарник</a> в 1С:EDT, среде разработки 1С.</td></tr>
+        <tr><th scope="row">3. Код</th><td>Пишет черновик правки.</td><td>Разработчик сверяет его с правилами и сохраняет версию.</td><td><a href="https://code.1c.ai/support/">1С:Напарник</a> пишет код. <a href="https://1c-syntax.github.io/bsl-language-server/">BSL Language Server</a> проверяет BSL, встроенный язык 1С.</td></tr>
+      </tbody>
+    </table>
+    <p class="note"><a href="../journey.html#requirements">Карта этапов с примерами и источниками</a></p>
+  </section>
+
+  <section class="slide" aria-labelledby="slide-4">
+    <h2 id="slide-4">Люди проверяют версию, выпускают ее и разбирают сбои</h2>
+    <table aria-label="Этапы от проверки кода до сопровождения">
+      <thead><tr><th scope="col">Этап</th><th scope="col">Что делает ИИ</th><th scope="col">Что решает человек</th><th scope="col">Инструмент</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">4. Ревью</th><td>Ищет расхождения с заявкой.</td><td>Коллега проверяет замечания и принимает правку.</td><td>Сравнение версий в <a href="https://v8.1c.ru/platforma/gruppovaya-razrabotka/">хранилище 1С</a>. Анализ кода в <a href="https://1c-syntax.github.io/bsl-language-server/">BSL Language Server</a>.</td></tr>
+        <tr><th scope="row">5. Тесты</th><td>Предлагает случаи для проверки.</td><td>Тестировщик проверяет их в тестовой базе.</td><td><a href="https://bia-technologies.github.io/yaxunit/">YAxUnit</a> для правил, <a href="https://github.com/Pr-Mex/vanessa-automation">Vanessa Automation</a> для действий пользователя.</td></tr>
+        <tr><th scope="row">6. Поставка</th><td>Готовит описание обновления.</td><td>Ответственный сверяет версию, проверки и порядок восстановления.</td><td><a href="https://docs.gitflic.ru/latest/cicd/pipeline/">GitFlic</a> хранит версии кода и запускает проверки.</td></tr>
+        <tr><th scope="row">7. Сопровождение</th><td>Группирует обезличенные обращения.</td><td>Поддержка воспроизводит сбой и возвращает задачу в очередь.</td><td>Система учета обращений и разрешенный помощник.</td></tr>
+      </tbody>
+    </table>
+    <p class="note"><a href="../journey.html#review">Карта этапов с источниками</a></p>
+  </section>
+
+  <section class="slide" aria-labelledby="slide-5">
+    <h2 id="slide-5">Пример заказа дает команде проверяемое правило</h2>
+    <ul class="points">
+      <li><strong>Заказчик и аналитик.</strong> Менеджер просит предупреждать о пустом адресе доставки. ИИ предлагает уточнить, можно ли продолжить. Заказчик задает порядок. Сначала 1С показывает предупреждение, затем менеджер подтверждает действие, после чего 1С проводит заказ.</li>
+      <li><strong>Разработчик и коллега.</strong> Разработчик готовит правку по согласованному правилу и сохраняет версию. Коллега проверяет, что предупреждение не блокирует проведение.</li>
+      <li><strong>Тестировщик и ответственный за выпуск.</strong> Тестировщик сверяет три случая: проведение с адресом и без него, запись черновика без адреса. Дополнительно проверяет другую роль и минимально заполненный адрес. Ответственный выпускает именно проверенную версию.</li>
+    </ul>
+    <p class="note"><a href="../practice.html#experience">Учебный интерактив</a> · <a href="../docs/pilot.html">Карточка с пятью проверками</a></p>
+  </section>
+
+  <section class="slide" aria-labelledby="slide-6">
+    <h2 id="slide-6">Пользователь 1С:Напарника дает фирме 1С лицензию на переданный код</h2>
+    <ul class="points">
+      <li><strong>Передача.</strong> Запросы, структура метаданных, формы и модули уходят на серверы под контролем фирмы 1С. <a href="https://code.1c.ai/user_agreement/">Пункты 8-9 соглашения</a>.</li>
+      <li><strong>Лицензия.</strong> Пользователь дает фирме 1С неисключительную бессрочную безвозмездную лицензию на эти материалы: воспроизведение, переработку, распространение, доведение до всеобщего сведения и публичный показ. Фирма 1С может передать права своим сотрудникам и лицам, которых привлекает по договорам, в том числе для обучения моделей ИИ. <a href="https://code.1c.ai/user_agreement/">Пункт 10 соглашения</a>.</li>
+      <li><strong>Полномочия.</strong> Пользователь подтверждает, что вправе выдать такую лицензию. Пункт 10 закрепляет согласие на выдачу сублицензий для улучшения и обучения моделей ИИ. <a href="https://code.1c.ai/support/">Руководство 1С</a> требует согласия для обучения.</li>
+      <li><strong>Вопрос директору.</strong> Есть ли у вашей команды право выдать такую лицензию на код заказчика?</li>
+    </ul>
+  </section>
+
+  <section class="slide" aria-labelledby="slide-7">
+    <h2 id="slide-7">Astra Developer Platform появилась в прайс-листе 1С Дистрибьюции</h2>
+    <p class="lead">Платформа включена в прайс-лист 1С Дистрибьюции с 23 ноября 2026 года. В опубликованном перечне шаблон для 1С не указан. <a href="https://dist.1c.ru/news/obnovlyen-prays-list-na-produkty-astra-linux-ot-gruppy-astra23/">1С Дистрибьюция, 25.11.2026</a>.</p>
+    <p>Платформа объединяет портал разработчика, GitFlic для версий и проверок и выпуск в рабочую среду. ИИ-агент предлагает правку, человек решает, принять ли ее. <a href="https://dist.1c.ru/news/obnovlyen-prays-list-na-produkty-astra-linux-ot-gruppy-astra23/">Описание платформы</a>.</p>
+    <p class="note"><a href="../docs/astra-platform.html">Возможности платформы и открытые вопросы для 1С</a></p>
+  </section>
+
+  <section class="slide" aria-labelledby="slide-8">
+    <h2 id="slide-8">Директор выбирает подход по задачам обычной очереди</h2>
+    <ol class="points">
+      <li><strong>Изучите текущую работу.</strong> Возьмите несколько закрытых карточек одного типа. Найдите, где команда ждет, уточняет или переделывает.</li>
+      <li><strong>Выберите инструмент и порядок.</strong> Сравните текстового помощника, 1С:Напарника, внутренний сервис и текущую работу без ИИ. Определите допустимые данные, проверяющего и ответственного за выпуск.</li>
+      <li><strong>Примените решение в обычной очереди.</strong> По похожим задачам сравните время от заявки до приемки с учетом проверок, число возвратов и дефекты после выпуска.</li>
+    </ol>
+    <p class="note"><a href="../docs/decision.html">Сравнение вариантов</a> · <a href="../docs/measurement.html">Как вести учет времени и качества</a></p>
+  </section>
 </main>
-<nav class="pager" aria-label="Навигация по слайдам"><button id="prev" aria-label="Предыдущий слайд">‹</button><span id="count">01 / 07</span><button id="next" aria-label="Следующий слайд">›</button></nav>
-<noscript><style>body{height:auto!important;min-height:100%;overflow-x:hidden!important;overflow-y:auto!important}.deck{display:block!important;width:100%!important;height:auto!important;min-height:0!important}.slide,.slide.active,.slide:not(.active){position:relative!important;display:flex!important;flex-direction:column!important;width:100%!important;height:auto!important;min-height:100svh!important;aspect-ratio:auto!important;margin:0!important;padding:22px 18px 80px!important;overflow:visible!important;border-left:4px solid var(--lime)!important}.pager{display:none!important}</style></noscript>
-<script>
-const slides=[...document.querySelectorAll('.slide')];let cur=0;function show(n){cur=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('active',i===cur));document.getElementById('count').textContent=String(cur+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0')}document.getElementById('prev').onclick=()=>show(cur-1);document.getElementById('next').onclick=()=>show(cur+1);document.addEventListener('keydown',e=>{if(['ArrowRight',' ','PageDown'].includes(e.key)){e.preventDefault();show(cur+1)}else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(cur-1)}else if(e.key==='Home')show(0);else if(e.key==='End')show(slides.length-1)});
-</script>
-</body></html>
+</body>
+</html>

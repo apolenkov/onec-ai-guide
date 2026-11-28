@@ -46,50 +46,50 @@
     <div class="reader-locator" hidden><span id="reading-position"></span><a href="#stages">К общей карте</a></div>
     <div class="stage-list">
       <details class="stage" id="requirements" open>
-        <summary><span class="stage-number">01</span><span class="stage-title">Требования</span><span class="stage-teaser">Согласовать правило для пустого адреса</span></summary>
-        <div class="stage-body"><p><b>ИИ уточняет заявку</b>Если адрес пуст, достаточно предупредить менеджера или нужно остановить проведение?</p><p><b>Заказчик</b>Заказ можно провести. С адресом предупреждение не нужно. Черновик можно записать без сообщения.</p><p class="stage-result"><b>Результат</b>Разработчик получает три примера, по которым заказчик примет доработку.</p>
+        <summary><span class="stage-number">01</span><span class="stage-title">Требования</span><span class="stage-teaser">Согласовать правило для пустого адреса</span><span class="stage-indicator" aria-hidden="true"></span></summary>
+        <div class="stage-body"><p><b>ИИ уточняет заявку</b>Если адрес пуст, достаточно предупредить менеджера или нужно остановить проведение?</p><p><b>Заказчик</b>Заказ можно провести. С адресом предупреждение не нужно. Черновик можно записать без сообщения.</p><p class="stage-tool"><b>Инструмент</b>Разрешенный текстовый помощник для черновика заявки.</p><p class="stage-result"><b>Результат</b>Разработчик получает три примера, по которым заказчик примет доработку.</p>
           <a class="stage-next" href="#design">Дальше: проектирование</a>
           <details class="stage-references"><summary>Источники к этапу</summary><ul><li><a href="https://github.com/comol/ai_rules_1c/blob/f4dbf88a4d77231bd310f11598515d4b7522ec70/content/agents/planner.md">Пример роли планировщика 1С</a><span>Пример поручения для помощника.</span></li><li><a href="docs/tools.html">Инструменты для уточнения задачи</a><span>Средства для формулировки требований.</span></li></ul></details>
         </div>
       </details>
       <details class="stage" id="design" open>
-        <summary><span class="stage-number">02</span><span class="stage-title">Проектирование</span><span class="stage-teaser">Найти объекты и место проверки</span></summary>
-        <div class="stage-body"><p><b>ИИ ищет в проекте</b>Предлагает, где проверить адрес и вывести сообщение менеджеру.</p><p><b>Разработчик</b>Сверяет объекты со своей конфигурацией и выбирает место, где можно отличить проведение от записи черновика.</p><p class="stage-result"><b>Результат</b>В задаче указано, какой модуль менять и при каком действии сработает проверка.</p>
+        <summary><span class="stage-number">02</span><span class="stage-title">Проектирование</span><span class="stage-teaser">Найти объекты и место проверки</span><span class="stage-indicator" aria-hidden="true"></span></summary>
+        <div class="stage-body"><p><b>ИИ ищет в проекте</b>Предлагает, где проверить адрес и вывести сообщение менеджеру.</p><p><b>Разработчик</b>Сверяет объекты со своей конфигурацией и выбирает место, где можно отличить проведение от записи черновика.</p><p class="stage-tool"><b>Инструмент</b>1С:Напарник в 1С:EDT, среде разработки 1С.</p><p class="stage-result"><b>Результат</b>В задаче указано, какой модуль менять и при каком действии сработает проверка.</p>
           <a class="stage-next" href="#code">Дальше: код</a>
           <details class="stage-references"><summary>Источники к этапу</summary><ul><li><a href="https://code.1c.ai/support/">Руководство 1С:Напарника</a><span>Возможности помощника в проекте.</span></li><li><a href="docs/tools.html">Каталог инструментов и контекста платформы</a><span>Помощники и сведения о платформе.</span></li></ul></details>
         </div>
       </details>
       <details class="stage" id="code" open>
-        <summary><span class="stage-number">03</span><span class="stage-title">Код</span><span class="stage-teaser">Добавить предупреждение в проведение</span></summary>
-        <div class="stage-body"><p><b>ИИ готовит код</b>Предлагает проверку адреса и текст сообщения для менеджера.</p><p><b>Разработчик</b>Сверяет код с объектами конфигурации. Проверяет синтаксис и то, что заказ по-прежнему проводится.</p><p class="stage-result"><b>Результат</b>На ревью передают изменение модуля и ссылку на три согласованных примера.</p>
+        <summary><span class="stage-number">03</span><span class="stage-title">Код</span><span class="stage-teaser">Добавить предупреждение в проведение</span><span class="stage-indicator" aria-hidden="true"></span></summary>
+        <div class="stage-body"><p><b>ИИ готовит код</b>Предлагает проверку адреса и текст сообщения для менеджера.</p><p><b>Разработчик</b>Сверяет код с объектами конфигурации. Проверяет синтаксис и то, что заказ по-прежнему проводится.</p><p class="stage-tool"><b>Инструмент</b><a href="https://code.1c.ai/support/">1С:Напарник</a> предлагает код. <a href="https://1c-syntax.github.io/bsl-language-server/">BSL Language Server</a> проверяет исходники на встроенном языке 1С.</p><p class="stage-result"><b>Результат</b>На ревью передают изменение модуля и ссылку на три согласованных примера.</p>
           <a class="stage-next" href="#review">Дальше: ревью</a>
-          <details class="stage-references"><summary>Источники к этапу</summary><ul><li><a href="https://code.1c.ai/changelog/">История версий 1С:Напарника</a><span>Изменения возможностей помощника.</span></li><li><a href="docs/astra-platform.html">Astra Dev Platform: функции и границы</a><span>Среда разработки и ее ограничения.</span></li></ul></details>
+          <details class="stage-references"><summary>Источники к этапу</summary><ul><li><a href="https://code.1c.ai/changelog/">История версий 1С:Напарника</a><span>Изменения возможностей помощника.</span></li><li><a href="docs/astra-platform.html">Astra Developer Platform: функции и границы</a><span>Среда разработки и ее ограничения.</span></li></ul></details>
         </div>
       </details>
       <details class="stage" id="review" open>
-        <summary><span class="stage-number">04</span><span class="stage-title">Ревью</span><span class="stage-teaser">Сверить проведение и черновик</span></summary>
-        <div class="stage-body"><p><b>ИИ ищет расхождения</b>Ищет строки, которые могут заблокировать проведение или вывести предупреждение при записи черновика.</p><p><b>Ревьюер</b>Проверяет замечания по коду и задаче. Если предупреждение блокирует проведение, возвращает код на исправление.</p><p class="stage-result"><b>Результат</b>Тестировщик получает проверенную версию и три примера для прогона.</p>
+        <summary><span class="stage-number">04</span><span class="stage-title">Ревью</span><span class="stage-teaser">Сверить проведение и черновик</span><span class="stage-indicator" aria-hidden="true"></span></summary>
+        <div class="stage-body"><p><b>ИИ ищет расхождения</b>Ищет строки, которые могут заблокировать проведение или вывести предупреждение при записи черновика.</p><p><b>Ревьюер</b>Проверяет замечания по коду и задаче. Если предупреждение блокирует проведение, возвращает код на исправление.</p><p class="stage-tool"><b>Инструмент</b>В <a href="https://v8.1c.ru/platforma/gruppovaya-razrabotka/">хранилище 1С</a> и Git можно сравнивать версии. В <a href="https://docs.gitflic.ru/latest/cicd/pipeline/">GitFlic</a> можно связать проверку с версией.</p><p class="stage-result"><b>Результат</b>Тестировщик получает проверенную версию и три примера для прогона.</p>
           <a class="stage-next" href="#tests">Дальше: тесты</a>
           <details class="stage-references"><summary>Источники к этапу</summary><ul><li><a href="https://its.1c.ru/db/v8std/browse/13/-1">Стандарты разработки 1С</a><span>Сверка с правилами разработки.</span></li><li><a href="docs/evidence.html">Опубликованные кейсы и ограничения данных</a><span>Кейсы применения и их ограничения.</span></li></ul></details>
         </div>
       </details>
       <details class="stage" id="tests" open>
-        <summary><span class="stage-number">05</span><span class="stage-title">Тесты</span><span class="stage-teaser">Проверить проведение и сохранение</span></summary>
-        <div class="stage-body"><p><b>ИИ готовит сценарии</b>Описывает проведение заказа с адресом и без него, а также запись черновика.</p><p><b>Тестировщик</b>Выполняет их под ролью менеджера в тестовой базе. Для каждого случая сверяет сообщение и состояние заказа.</p><p class="stage-result"><b>Результат</b>Ответственный за выпуск видит версию конфигурации и что получилось в каждом из трех случаев.</p>
+        <summary><span class="stage-number">05</span><span class="stage-title">Тесты</span><span class="stage-teaser">Проверить проведение и сохранение</span><span class="stage-indicator" aria-hidden="true"></span></summary>
+        <div class="stage-body"><p><b>ИИ готовит сценарии</b>Описывает проведение заказа с адресом и без него, а также запись черновика.</p><p><b>Тестировщик</b>Выполняет их под ролью менеджера в тестовой базе. Для каждого случая сверяет сообщение и состояние заказа.</p><p class="stage-tool"><b>Инструмент</b>YAxUnit для отдельных правил и Vanessa Automation для действий пользователя.</p><p class="stage-result"><b>Результат</b>Ответственный за выпуск видит версию конфигурации и итоги трех бизнес-сценариев, проверки другой роли и границы заполненности адреса.</p>
           <a class="stage-next" href="#delivery">Дальше: поставка</a>
           <details class="stage-references"><summary>Источники к этапу</summary><ul><li><a href="https://bia-technologies.github.io/yaxunit/">YAxUnit: документация</a><span>Модульные тесты.</span></li><li><a href="https://github.com/Pr-Mex/vanessa-automation">Vanessa Automation: проект</a><span>Автоматизация функциональных сценариев.</span></li></ul></details>
         </div>
       </details>
       <details class="stage" id="delivery" open>
-        <summary><span class="stage-number">06</span><span class="stage-title">Поставка</span><span class="stage-teaser">Выпустить проверенное изменение</span></summary>
-        <div class="stage-body"><p><b>ИИ готовит описание</b>Пишет для менеджеров, когда появится предупреждение и можно ли продолжить работу.</p><p><b>Ответственный за выпуск</b>Сверяет версию с отчетом о тестах, проверяет порядок восстановления и применяет обновление.</p><p class="stage-result"><b>Результат</b>Поддержка получает номер выпущенной версии и описание изменения для пользователей.</p>
+        <summary><span class="stage-number">06</span><span class="stage-title">Поставка</span><span class="stage-teaser">Выпустить проверенное изменение</span><span class="stage-indicator" aria-hidden="true"></span></summary>
+        <div class="stage-body"><p><b>ИИ готовит описание</b>Пишет для менеджеров, когда появится предупреждение и можно ли продолжить работу.</p><p><b>Ответственный за выпуск</b>Сверяет версию с отчетом о тестах, проверяет порядок восстановления и применяет обновление.</p><p class="stage-tool"><b>Инструмент</b>GitFlic хранит версии и запускает проверки. Команда настраивает обновление базы 1С.</p><p class="stage-result"><b>Результат</b>Поддержка получает номер выпущенной версии и описание изменения для пользователей.</p>
           <a class="stage-next" href="#support">Дальше: сопровождение</a>
-          <details class="stage-references"><summary>Источники к этапу</summary><ul><li><a href="https://infostart.ru/journal/news/mir-1s/kak-s-pomoshchyu-ii-agentov-sozdali-novyy-dokument-v-1s-za-chetyre-chasa-vmesto-dvukh-dney_2826336/">Кейс выпуска изменения в рабочую базу</a><span>Пример выпуска изменения с ИИ.</span></li><li><a href="docs/sdlc-research.html">Исследование процесса и его границы</a><span>Этапы и границы применения помощника.</span></li></ul></details>
+          <details class="stage-references"><summary>Источники к этапу</summary><ul><li><a href="https://infostart.ru/journal/news/mir-1s/kak-s-pomoshchyu-ii-agentov-sozdali-novyy-dokument-v-1s-za-chetyre-chasa-vmesto-dvukh-dney_2826336/">Кейс выпуска изменения в рабочую базу</a><span>Пример выпуска изменения с ИИ.</span></li><li><a href="docs/sdlc-research.html">Исследование процесса и его границы</a><span>Этапы и границы применения помощника.</span></li><li><a href="docs/astra-platform.html">Astra Developer Platform и выпуск 1С</a><span>Общие проверки и выпуск по <a href="https://dist.1c.ru/news/obnovlyen-prays-list-na-produkty-astra-linux-ot-gruppy-astra23/">описанию от 25.11.2026</a>. Сборку и обновление 1С команда настраивает отдельно.</span></li></ul></details>
         </div>
       </details>
       <details class="stage" id="support" open>
-        <summary><span class="stage-number">07</span><span class="stage-title">Сопровождение</span><span class="stage-teaser">Отследить предупреждения и обращения</span></summary>
-        <div class="stage-body"><p><b>ИИ разбирает обращения</b>Группирует обезличенные сообщения менеджеров. Например, выделяет жалобы на предупреждение при записи черновика.</p><p><b>Поддержка</b>Проверяет такое обращение на копии базы и связывает его с версией обновления.</p><p class="stage-result"><b>Результат</b>Если ошибка подтвердилась, в работу возвращается заявка с шагами воспроизведения и тестом для следующего выпуска.</p>
+        <summary><span class="stage-number">07</span><span class="stage-title">Сопровождение</span><span class="stage-teaser">Отследить предупреждения и обращения</span><span class="stage-indicator" aria-hidden="true"></span></summary>
+        <div class="stage-body"><p><b>ИИ разбирает обращения</b>Группирует обезличенные сообщения менеджеров. Например, выделяет жалобы на предупреждение при записи черновика.</p><p><b>Поддержка</b>Проверяет такое обращение на копии базы и связывает его с версией обновления.</p><p class="stage-tool"><b>Инструмент</b>Система учета обращений и разрешенный текстовый помощник.</p><p class="stage-result"><b>Результат</b>Если ошибка подтвердилась, в работу возвращается заявка с шагами воспроизведения и тестом для следующего выпуска.</p>
           <a class="stage-next" href="#library">К материалам</a>
           <details class="stage-references"><summary>Источники к этапу</summary><ul><li><a href="https://v8.1c.ru/platforma/iskusstvennyy-intellekt/">ИИ в платформе 1С: опубликованное описание</a><span>ИИ в продуктах платформы 1С.</span></li><li><a href="docs/measurement.html">Метрики времени, затрат и качества</a><span>Что наблюдать и сравнивать.</span></li></ul></details>
         </div>
@@ -98,13 +98,40 @@
   </section>
 
   <section class="atlas-library" aria-labelledby="library-title" id="library">
-    <h2 id="library-title">Материалы по теме</h2>
-    <p class="library-intro">Откройте нужную главу, презентацию или учебный пример.</p>
+    <h2 id="library-title">Все материалы исследования</h2>
     <div class="library-list">
-      <details><summary>Выбрать инструмент</summary><ul><li><a href="docs/tools.html">Каталог инструментов</a></li><li><a href="docs/astra-platform.html">Astra Dev Platform: функции и подтвержденные ограничения</a></li><li><a href="practice.html#choice">Учебный пример: выбор инструмента</a></li></ul></details>
-      <details><summary>Что получилось у других команд</summary><ul><li><a href="docs/evidence.html">Кейсы команд и качество доказательств</a></li><li><a href="docs/measurement.html">План измерений и сравнение задач</a></li><li><a href="docs/sdlc-research.html">Исследование ИИ по этапам SDLC</a></li></ul></details>
-      <details><summary>Объяснить команде</summary><ul><li><a href="docs/team-patterns.html">Как вести задачу в 1С: рабочие примеры для команды</a></li><li><a href="docs/operating-model.html">Роли команды и порядок работы</a></li><li><a href="docs/learning.html">Обучение: записи, слайды, упражнения</a></li><li><a href="training/briefing.html">Презентация для обсуждения с руководителем: в браузере</a></li><li><a href="training/briefing.pptx">Презентация PowerPoint</a></li><li><a href="training/briefing.pdf">Презентация PDF</a></li></ul></details>
-      <details><summary>Пройти учебный пример заказа</summary><ul><li><a href="practice.html#experience">Опыт на примере заказа</a></li><li><a href="practice.html#workflow">Разобрать структуру проекта</a></li></ul></details>
+      <section id="library-map" aria-labelledby="library-map-title">
+        <h3 id="library-map-title">Этапы и платформы</h3>
+        <ul><li><a href="docs/sdlc-research.html">Практики по этапам разработки</a></li><li><a href="docs/astra-platform.html">Astra Developer Platform и 1С</a></li></ul>
+      </section>
+      <section id="library-experience" aria-labelledby="library-experience-title">
+        <h3 id="library-experience-title">Опыт применения</h3>
+        <ul><li><a href="docs/evidence.html">Разработка и бенчмарки</a></li><li><a href="docs/business-cases.html">Бизнес-процессы</a></li></ul>
+      </section>
+      <section id="library-choice" aria-labelledby="library-choice-title">
+        <h3 id="library-choice-title">Выбор решения</h3>
+        <ul><li><a href="docs/decision.html">Выбор решения и процесса</a></li><li><a href="docs/tools.html">Инструменты</a></li></ul>
+      </section>
+      <section id="library-workflow" aria-labelledby="library-workflow-title">
+        <h3 id="library-workflow-title">Организация работы</h3>
+        <ul><li><a href="docs/operating-model.html">Как устроена работа команды</a></li><li><a href="docs/team-patterns.html">Как организовать разработку 1С с ИИ</a></li><li><a href="docs/pilot.html">Процесс разработки</a></li><li><a href="docs/measurement.html">Измерение результата</a></li><li><a href="docs/learning.html">Обучение</a></li><li><a href="templates/task.html">Карточка задачи</a></li></ul>
+      </section>
+      <section aria-labelledby="library-practice">
+        <h3 id="library-practice">Учебный пример</h3>
+        <ul><li><a href="practice.html#experience">Попробовать пример заказа без адреса</a></li><li><a href="practice.html#choice">Выбрать инструмент на примере</a></li><li><a href="practice.html#workflow">Разобрать работу команды по шагам</a></li></ul>
+      </section>
+      <section id="library-files" aria-labelledby="library-files-title">
+        <h3 id="library-files-title">Презентация и файлы</h3>
+        <ul>
+          <li><a href="training/briefing.html">Презентация для директора в браузере</a></li>
+          <li><a href="training/briefing.pptx">Презентация в PowerPoint</a></li>
+          <li><a href="training/briefing.pdf">Презентация в PDF</a></li>
+          <li><a href="templates/pilot.csv">Журнал измерений для обычной очереди</a></li>
+          <li>Сравнение вариантов: <a href="docs/decision.docx">Word</a>, <a href="docs/decision.pdf">PDF</a></li>
+          <li>Порядок работы команды: <a href="docs/operating-model.docx">Word</a>, <a href="docs/operating-model.pdf">PDF</a></li>
+          <li><a href="downloads/knowledge-map.pdf">Тематическая карта, архивная версия от 27.11.2026</a></li>
+        </ul>
+      </section>
     </div>
   </section>
 

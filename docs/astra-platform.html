@@ -10,15 +10,25 @@
 <body class="chapter">
   <a class="skip-link" href="#main">К содержанию</a>
   <header class="site-header">
-    <a class="chapter-return-link" href="../journey.html#library" data-return-link>← К библиотеке материалов</a>
+    <a class="chapter-return-link" href="../journey.html#library-map" data-return-link>← К теме: Этапы и платформы</a>
   </header>
   <main class="reader" id="main">
     <div class="chapter-context"><p>Этапы и платформы</p></div>
     <article class="main-article">
 <h1 id="astra-developer-platform-и-разработка-на-1с">Astra Developer Platform и разработка на 1С</h1>
-<p><em>Срез публичных материалов на 27 ноября 2026 года.</em></p>
-<p>Astra Developer Platform (ADP) объединяет GitFlic для исходников и CI/CD, &quot;Боцман&quot; для управления инфраструктурой и инструменты наблюдения за приложениями. В анонсе 19 мая 2026 года Astra также описала слой ИИ для работы по циклу разработки. Для команды 1С практический вопрос в том, какой компонент сможет собрать ее конфигурацию, запустить тесты на нужной версии платформы и показать результат ревьюеру. <a href="https://astra.ru/about/press-center/news/gruppa-astra-predstavlyaet-astra-dev-platform-edinuyu-platformu-razrabotki-dlya-doverennogo-po/">Анонс выпуска</a>, <a href="https://astra.ru/software-services/pk/astra-dev-platform/">страница продукта</a>, <a href="https://astra.ru/local/ajax/download/docs/12/49201/">техническая архитектура</a></p>
-<h2 id="этапы-sdlc">Этапы SDLC</h2>
+<details class="part-navigation"><summary>Содержание главы · часть 1 из 2</summary><nav aria-label="Части главы"><ol>
+<li><a href="astra-platform.html" data-stage-link aria-current="page">Этапы жизненного цикла разработки</a></li>
+<li><a href="astra-platform-02.html" data-stage-link>Четыре свидетельства при выборе</a></li>
+</ol></nav></details>
+
+<p><em>Срез публичных материалов на 28 ноября 2026 года.</em></p>
+<p>Astra Developer Platform (ADP) включена в прайс-лист 1С Дистрибьюции с 23 ноября 2026 года. В перечне дистрибьютора есть шаблоны для Go, Java, Python, C#, TypeScript и React. Шаблон для 1С в этом перечне не указан. <a href="https://dist.1c.ru/news/obnovlyen-prays-list-na-produkty-astra-linux-ot-gruppy-astra23/">1С Дистрибьюция, 25.11.2026</a>. Производитель представил платформу 19 мая. <a href="https://astra.ru/about/press-center/news/gruppa-astra-predstavlyaet-astra-dev-platform-edinuyu-platformu-razrabotki-dlya-doverennogo-po/">Анонс выпуска, 19.05.2026</a>.</p>
+<p>На конференции 25 сентября &quot;Группа Астра&quot; представила портал на Backstage, GitFlic для исходников и проверок, &quot;Боцман&quot; для управления средами и помощника &quot;Астра ИИ [Код]&quot;. Поставщик описал связь изменений с проверками и выпуском. Он назвал статический анализ кода (SAST), проверку состава зависимостей (SCA) и проверку работающего приложения (DAST). <a href="https://astra.ru/about/press-center/news/itogi-astrakonf-2026-platforma-astra-2-0-i-ekosistema-nativnogo-ii-ot-gruppy-astra/">Итоги &quot;АстраКонф&quot;, 29.09.2026</a>.</p>
+<p>По заявлению поставщика, платформа может снизить число рутинных заявок в DevOps на 80-90%. Замера для разработки на 1С поставщик не привел. <a href="https://astra.ru/about/press-center/news/itogi-astrakonf-2026-platforma-astra-2-0-i-ekosistema-nativnogo-ii-ot-gruppy-astra/">Итоги &quot;АстраКонф&quot;</a>.</p>
+<p>В сообщении от 25 ноября дистрибьютор описал работу агента. Агент меняет код в отдельной среде и открывает запрос на слияние в GitFlic. Решение о слиянии принимает человек. <a href="https://dist.1c.ru/news/obnovlyen-prays-list-na-produkty-astra-linux-ot-gruppy-astra23/">Описание дистрибьютора</a>.</p>
+<p>Для оценки интеграции с 1С проверьте работу со встроенным языком 1С (BSL), средой разработки 1С:EDT и сборкой конфигурации.</p>
+<h2 id="этапы-sdlc">Этапы жизненного цикла разработки</h2>
+<p>Git ведет историю исходников. CI/CD: автоматические проверки, сборка и доставка изменений. Подробнее см. <a href="../journey.html">карту этапов</a>.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -40,8 +50,8 @@
 </tr>
 <tr>
 <td>Сборка и тесты</td>
-<td>GitFlic CI/CD запускает jobs и хранит артефакты. Документированы MR pipeline, Merge Result Pipeline и отчеты JUnit, SAST, DAST.</td>
-<td>Связать runner с EDT CLI/пакетным конфигуратором, тестовой базой и отчетами. По документации 1С, EDT CLI подготавливает проект для сборки конфигуратором; сценарии и команду тестов задайте отдельно.</td>
+<td>GitFlic запускает задания и хранит результаты. В документации описаны конвейер для запроса на слияние (MR pipeline), конвейер проверки результата слияния (Merge Result Pipeline) и отчеты о тестах и проверках безопасности. <a href="https://docs.gitflic.ru/latest/en/cicd/pipeline/">Конвейер</a>, <a href="https://docs.gitflic.ru/latest/cicd/gitflic-ci-yaml/">отчеты в описании конвейера</a>.</td>
+<td>Подключите к исполнителю заданий (runner) командную строку 1С:EDT (EDT CLI), конфигуратор и тестовую базу. EDT CLI готовит проект к сборке конфигуратором. Команды тестов и формат отчетов задайте отдельно.</td>
 </tr>
 <tr>
 <td>Поставка и эксплуатация</td>
@@ -51,29 +61,20 @@
 </tbody>
 </table></div>
 <p>Документы 1С: <a href="https://its.1c.ru/db/content/metod8dev/src/developers/scalability/methods/i8106015.htm">сборка CI через EDT CLI</a>, <a href="https://edt.1c.ru/faq/">FAQ EDT</a>, <a href="https://v8.1c.ru/upload/static/kip.pdf">сценарное тестирование</a>. Интеграцию с ADP надо проверить и настроить.</p>
-<h2 id="gates-и-тесты">Gates и тесты</h2>
-<p>GitFlic позволяет назначить согласующих, запретить автору аппрувить изменения, сбрасывать аппрувы после коммита и требовать успеха pipeline. Merge Result Pipeline доступен в Enterprise. Это общие gates; правила для 1С не опубликованы.</p>
-<p>Job может вызвать LLM через скрипт/API и сохранить unified diff как артефакт. Разработчик просматривает и применяет патч в веб-интерфейсе; затем проверки запускаются заново. Модель и поставщик не заданы. Источники: <a href="https://docs.gitflic.ru/latest/cicd/patch/">LLM-патчи, 06.05.2026</a>, <a href="https://docs.gitflic.ru/latest/en/cicd/pipeline/">pipeline</a>, <a href="https://docs.gitflic.ru/latest/project/merge_settings/">правила слияния</a>, <a href="https://docs.gitflic.ru/latest/cicd/gitflic-ci-yaml/">справочник CI/CD YAML</a>.</p>
-<p>Для gate 1С нужны BSL-проверки, сборка, тесты на отдельной базе и проверка обновления. Такая цепочка в документации ADP/GitFlic не описана.</p>
+<h2 id="gates-и-тесты">Правила слияния и тесты</h2>
+<p>В GitFlic правила назначения согласующих, запрета одобрения автором и сброса одобрений при новой правке доступны в редакции Enterprise и на gitflic.ru. При проверке последнего конвейера GitFlic допускает слияние со статусами &quot;Успех&quot; и &quot;Предупреждение&quot;. <a href="https://docs.gitflic.ru/latest/project/merge_settings/">Правила слияния</a>. Конвейер результата слияния доступен только в Enterprise. <a href="https://docs.gitflic.ru/latest/cicd/pipeline/">Конвейер</a>.</p>
+<p>Задание конвейера может вызвать языковую модель и сохранить предложенное изменение как файл правки. Функция работает только с конвейером слияния. После того как разработчик применяет правку в интерфейсе, GitFlic создает коммит и запускает новые конвейеры. Документация не задает модель или ее поставщика. Источники: <a href="https://docs.gitflic.ru/latest/cicd/patch/">LLM-патчи, 06.05.2026</a>, <a href="https://docs.gitflic.ru/latest/en/cicd/pipeline/">pipeline</a>, <a href="https://docs.gitflic.ru/latest/project/merge_settings/">правила слияния</a>, <a href="https://docs.gitflic.ru/latest/cicd/gitflic-ci-yaml/">справочник CI/CD YAML</a>.</p>
+<p>Для допуска к выпуску 1С нужны BSL-проверки, сборка, тесты на отдельной базе и проверка обновления. Такая цепочка в документации ADP/GitFlic не описана.</p>
 <h2 id="bsl-edt-acp-и-mcp">BSL, EDT, ACP и MCP</h2>
-<p>В проверенных открытых материалах Astra и GitFlic не нашлось описания выпущенной интеграции ADP с BSL, 1С:EDT или MCP для 1С.</p>
-<p>В списке языков OpenIDE (Java, Kotlin, Go, JavaScript, TypeScript, Python, PHP) BSL не указан.</p>
-<p>В пресс-релизе OpenIDE Pro 2026.2 (24.09.2026) ACP назван протоколом подключения агентов: Astra AI Code, Claude Code, Codex, OpenCode и Cursor. Модели вызываются через выбранного агента, конкретные не указаны. Это функция OpenIDE Pro, не поддержка MCP в ADP.</p>
-<p>В проекте сообщества 1c-syntax расширение VS Code запускает BSL Language Server с MCP endpoint. Поддержка этой интеграции в ADP требует отдельного подтверждения поставщика. Проверьте версию и передачу контекста. Источники: <a href="https://astra.ru/about/press-center/news/openide-i-openide-pro-2026-2-ii-agenty-pryamo-v-ide-i-novye-vozmozhnosti-dlya-raboty-s-bazami-dannykh/">релиз OpenIDE Pro</a>, <a href="https://github.com/1c-syntax/bsl-language-server">BSL Language Server</a>, <a href="https://github.com/1c-syntax/vsc-language-1c-bsl/blob/master/package.json">настройки расширения VS Code и MCP</a>.</p>
-<h2 id="четыре-свидетельства-при-выборе">Четыре свидетельства при выборе</h2>
-<p>Перед выбором поставки запросите четыре свидетельства:</p>
-<ol>
-<li><strong>Данные.</strong> На обезличенном фрагменте проверьте, какие исходники видит агент, что уходит в запрос и где хранятся контекст/журналы. Зафиксируйте внешние адреса и исключенные каталоги.</li>
-<li><strong>Конфигурация.</strong> На закрепленных версиях 1С/EDT/runner соберите артефакт в чистом контуре, запустите BSL-проверки и сохраните версии, команды и результаты CI.</li>
-<li><strong>Контур и LLM.</strong> Получите схему трафика выбранной поставки, название агента, протокол (ACP или MCP), модель и endpoint. Проверьте отключение внешних вызовов. ACP в OpenIDE Pro не доказывает MCP в ADP.</li>
-<li><strong>Поддержка.</strong> Запросите матрицу версий ОС, GitFlic, &quot;Боцмана&quot;, EDT, платформы 1С, runner и агента, сценарии сборки/тестирования/обновления, зоны ответственности и сроки поддержки. В рассмотренной документации найти такую матрицу для 1С не удалось.</li>
-</ol>
-<p>При выборе ADP оцените отдельно общие функции платформы и затраты на подключение вашей конфигурации. Основанием включить поддержку 1С в требования к поставке послужат версия продукта, матрица совместимости и отчет о сборке и тестах.</p>
-
+<p>MCP (Model Context Protocol) позволяет помощнику обращаться к внешним инструментам. В рассмотренных материалах Astra и GitFlic нет описания интеграции ADP с BSL, 1С:EDT или MCP для 1С.</p>
+<p>В <a href="https://docs.openide.ru/languages/">опубликованном списке языков OpenIDE</a> BSL не указан.</p>
+<p>Плагин AI for OpenIDE в редакции OpenIDE Pro подключает агентов по протоколу подключения агентов к среде разработки (ACP, Agent Client Protocol). В каталоге есть &quot;Астра ИИ Код&quot;, Claude Code, Codex, OpenCode и Cursor. Каждый агент работает со своей моделью. <a href="https://docs.openide.ru/ai/agents/">Каталог и подключение агентов</a>.</p>
+<p>В проекте сообщества 1c-syntax расширение VS Code запускает BSL Language Server с MCP endpoint. Поддержка этой интеграции в ADP требует отдельного подтверждения поставщика. Проверьте версию и передачу контекста. Источники: <a href="https://github.com/1c-syntax/bsl-language-server">BSL Language Server</a>, <a href="https://github.com/1c-syntax/vsc-language-1c-bsl/blob/master/package.json">настройки расширения VS Code и MCP</a>.</p>
+<p class="chapter-continue"><span>Дальше в этой главе</span><a href="astra-platform-02.html" data-stage-link>Четыре свидетельства при выборе →</a></p>
     </article>
-    <details class="topic-neighbors"><summary>Другие главы этой темы</summary><nav aria-label="Другие главы темы"><a href="sdlc-research.html" data-stage-link><span>Предыдущая глава</span>Практики по этапам SDLC</a></nav></details>
+    <details class="topic-neighbors"><summary>Другие главы темы: Этапы и платформы</summary><nav aria-label="Другие главы темы: Этапы и платформы"><a href="sdlc-research.html" data-stage-link><span>Предыдущая глава</span>Практики по этапам разработки</a></nav></details>
   </main>
-  <footer class="site-footer"><a href="../journey.html#library" data-return-link>К библиотеке материалов</a><span>Источники указаны в тексте</span></footer>
+  <footer class="site-footer"><a href="../journey.html#library-map" data-return-link>К теме: Этапы и платформы</a><span>Источники указаны в тексте</span></footer>
   <script src="../chapter-return.js" defer></script>
 </body>
 </html>
